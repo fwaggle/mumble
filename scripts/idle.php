@@ -51,6 +51,9 @@ $ice = 'Meta:tcp -h 127.0.0.1 -p 6502';
 # Murmur ID #
 $mid = 0;
 
+# Group to not move
+$immune = 'noidle';
+
 ######################################################################
 Ice_loadProfile();
 $base = $ICE->stringToProxy($ice);
@@ -60,9 +63,15 @@ $m = $murmur->getServer($mid);
 
 $users = $m->getUsers();
 
+$m->getACL(0, $acls, $groups, $inherit);
+foreach ($groups as $g) {
+	if ($g->{'name'} == $immune)
+		$nomove = $g->{'members'};
+}
+
 foreach ($users as $u) {
 	printf("%s: %s\n", $u->name, $u->idlesecs);
-	if ($u->idlesecs > $idle && $u->channel != $afk) {
+	if ($u->idlesecs > $idle && $u->channel != $afk && !in_array($u->userid, $nomove)) {
 		$state = $m->getState($u->session);
 		if ($state) {
 			$state->channel = $afk;
