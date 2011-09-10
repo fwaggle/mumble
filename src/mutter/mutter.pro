@@ -20,7 +20,11 @@ DIST = ../murmur/Murmur.ice
 
 win32 {
 	QMAKE_LIBDIR *= "$$BOOST_PATH/lib"
-	LIBS *= -llibboost_program_options-vc100-mt-gd-1_47
+	win32:CONFIG(debug, debug|release) {
+		LIBS *= -llibboost_program_options-vc100-mt-gd-1_47
+	} else {
+		LIBS *= -llibboost_program_options-vc100-mt-1_47
+	}
 } else {
 	LIBS *= -lboost_program_options
 }
