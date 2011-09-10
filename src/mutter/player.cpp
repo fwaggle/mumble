@@ -28,23 +28,38 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include <iostream>
+#include <iomanip>
+#include <iterator>
+#include <Ice/Ice.h>
+#include <Murmur.h>
+
+#include <mutter.h>
+
 using namespace std;
 using namespace Murmur;
 
-#define ACT_CONFPEEK	 1
-#define ACT_CONFPOKE	 2
-#define ACT_START	 3
-#define ACT_STOP	 4
-#define ACT_SERVLIST	 5
-#define ACT_USERADD	 6
-#define ACT_USERDEL	 7
-#define ACT_USERPASS	 8
-#define ACT_USERLIST	 9
-#define ACT_SERVNEW	10
-#define ACT_SERVDEL	11
-#define ACT_PLAYERLIST	12
-#define ACT_PLAYERKICK	13
+void
+player_list(void)
+{
+	UserMap users;
+	ServerPrx server;
+	
+	server = meta->getServer(serverId, ctx);
+	users = server->getUsers(ctx);
+	
+	cout << "SID      Name    Ping" << endl;
+	for (UserMap::iterator ii=users.begin(); ii != users.end(); ii++)
+		cout << setw(8) << right << (*ii).first << " " << (*ii).second.name 
+			<< " " << (*ii).second.udpPing << endl;
+}
 
-extern MetaPrx meta;
-extern Ice::Context ctx;
-extern int serverId;
+void
+player_kick(int session, string reason)
+{
+	ServerPrx server;
+	
+	server = meta->getServer(serverId, ctx);
+	
+	server->kickUser(session, reason);
+}

@@ -28,23 +28,15 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
-using namespace std;
-using namespace Murmur;
+void
+user_list(void);
 
-#define ACT_CONFPEEK	 1
-#define ACT_CONFPOKE	 2
-#define ACT_START	 3
-#define ACT_STOP	 4
-#define ACT_SERVLIST	 5
-#define ACT_USERADD	 6
-#define ACT_USERDEL	 7
-#define ACT_USERPASS	 8
-#define ACT_USERLIST	 9
-#define ACT_SERVNEW	10
-#define ACT_SERVDEL	11
-#define ACT_PLAYERLIST	12
-#define ACT_PLAYERKICK	13
+void
+user_del(string username);
 
-extern MetaPrx meta;
-extern Ice::Context ctx;
-extern int serverId;
+void
+user_add(string username);
+
+void
+user_pass(string username);
+

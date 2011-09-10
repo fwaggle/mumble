@@ -28,23 +28,89 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include <iostream>
+#include <iomanip>
+#include <iterator>
+#include <Ice/Ice.h>
+#include <Murmur.h>
+
+#include <mutter.h>
+
 using namespace std;
 using namespace Murmur;
 
-#define ACT_CONFPEEK	 1
-#define ACT_CONFPOKE	 2
-#define ACT_START	 3
-#define ACT_STOP	 4
-#define ACT_SERVLIST	 5
-#define ACT_USERADD	 6
-#define ACT_USERDEL	 7
-#define ACT_USERPASS	 8
-#define ACT_USERLIST	 9
-#define ACT_SERVNEW	10
-#define ACT_SERVDEL	11
-#define ACT_PLAYERLIST	12
-#define ACT_PLAYERKICK	13
+void
+serv_list(void)
+{
+	unsigned int i;
+	int id;
+	string name, host, port;
+	vector<ServerPrx> servers = meta->getAllServers(ctx);
+	
+	cerr << left << "ID    " << setw(40) << "Server Name" << setw(5) << " On?"
+		<< "Host" << endl;
+	cerr << left << "~~~~~ " << setw(40) << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~"
+		<< setw(5) << " ~~~" << "~~~~~~~~~~~~~~~~~~~" << endl;
+	
+	for (i=0; i < servers.size(); i++)
+	{
+		id = servers[i]->id(ctx);
+		name = servers[i]->getConf("registername", ctx);
+		host = servers[i]->getConf("host", ctx);
+		port = servers[i]->getConf("port", ctx);
+		
+		cout << setw(5) << right << id << " " << setw(40) << left << name;
+		if (servers[i]->isRunning(ctx))
+			cout << " On  ";
+		else
+			cout << " Off ";
+		
+		cout << host << ":" << port << endl;
+	}
+}
 
-extern MetaPrx meta;
-extern Ice::Context ctx;
-extern int serverId;
+void
+serv_start(void)
+{
+	ServerPrx server;
+	
+	server = meta->getServer(serverId, ctx);
+	server->start(ctx);
+}
+
+void
+serv_stop(void)
+{
+	ServerPrx server;
+	
+	server = meta->getServer(serverId, ctx);
+	server->stop(ctx);
+}
+
+void
+serv_new(void)
+{
+	ServerPrx server;
+	int id;
+	
+	server = meta->newServer(ctx);
+	id = server->id(ctx);
+	
+	cout << "New server ID: " << id << endl;
+}
+
+void
+serv_del(void)
+{
+	ServerPrx server;
+	
+	server = meta->getServer(serverId, ctx);
+	/*
+	 * This is removed, because I think it's a bit dangerous..
+	 */
+//	if (server->isRunning(ctx))
+//		server->stop(ctx);
+	server->_cpp_delete(ctx);
+	cout << "Server deleted!" << endl;
+}
+

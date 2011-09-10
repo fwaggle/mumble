@@ -28,23 +28,36 @@
    SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 */
 
+#include <iostream>
+#include <iomanip>
+#include <iterator>
+#include <Ice/Ice.h>
+#include <Murmur.h>
+
+#include <mutter.h>
+
 using namespace std;
 using namespace Murmur;
 
-#define ACT_CONFPEEK	 1
-#define ACT_CONFPOKE	 2
-#define ACT_START	 3
-#define ACT_STOP	 4
-#define ACT_SERVLIST	 5
-#define ACT_USERADD	 6
-#define ACT_USERDEL	 7
-#define ACT_USERPASS	 8
-#define ACT_USERLIST	 9
-#define ACT_SERVNEW	10
-#define ACT_SERVDEL	11
-#define ACT_PLAYERLIST	12
-#define ACT_PLAYERKICK	13
+void
+config_peek(string key)
+{
+	string value;
+	ServerPrx server;
+	
+	server = meta->getServer(serverId, ctx);
+	value = server->getConf(key, ctx);
+	cout << key << "=" << value << endl;
+}
 
-extern MetaPrx meta;
-extern Ice::Context ctx;
-extern int serverId;
+void
+config_poke(string key, string val)
+{
+	string value;
+	ServerPrx server;
+	
+	server = meta->getServer(serverId, ctx);
+	server->setConf(key, val, ctx);
+	value = server->getConf(key, ctx);
+	cout << key << "=" << value << endl;
+}
