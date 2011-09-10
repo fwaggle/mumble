@@ -38,10 +38,10 @@ namespace po = boost::program_options;
 #include <Murmur.h>
 
 #include <mutter.h>
-#include <sconfig.h>
-#include <player.h>
-#include <user.h>
-#include <server.h>
+#include <mtr_config.h>
+#include <mtr_player.h>
+#include <mtr_user.h>
+#include <mtr_server.h>
 
 using namespace std;
 using namespace Murmur;

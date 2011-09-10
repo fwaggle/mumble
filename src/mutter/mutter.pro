@@ -11,8 +11,9 @@ QT -= gui
 TARGET = mutter
 LANGUAGE	= C++
 FORMS =
-HEADERS = mutter.h sconfig.h player.h user.h server.h
-SOURCES = main.cpp sconfig.cpp player.cpp user.cpp server.cpp
+HEADERS = mutter.h mtr_config.h mtr_player.h mtr_server.h mtr_user.h
+PRECOMPILED_HEADER = 
+SOURCES = main.cpp mtr_config.cpp mtr_player.cpp mtr_server.cpp mtr_user.cpp
 PROTOBUF = 
 
 DIST = ../murmur/Murmur.ice
