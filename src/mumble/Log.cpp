@@ -368,7 +368,7 @@ QString Log::imageToImg(QImage img) {
 	return QString();
 }
 
-QString Log::validHtml(const QString &html, bool allowReplacement, QTextCursor *tc) {
+QString Log::validHtml(const QString &html, bool allowReplacement, QTextCursor *tc, bool checkHeight) {
 	QDesktopWidget dw;
 	ValidDocument qtd(allowReplacement);
 	bool valid = false;
@@ -408,7 +408,7 @@ QString Log::validHtml(const QString &html, bool allowReplacement, QTextCursor *
 	qtd.adjustSize();
 	QSizeF s = qtd.size();
 
-	if (!valid || (s.width() > qr.width()) || (s.height() > qr.height())) {
+	if (!valid || (checkHeight && ((s.width() > qr.width()) || (s.height() > qr.height())))) {
 		qtd.setPlainText(html);
 		qtd.adjustSize();
 		s = qtd.size();
@@ -475,7 +475,7 @@ void Log::log(MsgType mt, const QString &console, const QString &terse, bool own
 			tc.insertBlock();
 		}
 		tc.insertHtml(Log::msgColor(QString::fromLatin1("[%1] ").arg(dt.time().toString(Qt::DefaultLocaleShortDate)), Log::Time));
-		validHtml(console, true, &tc);
+		validHtml(console, true, &tc, false);
 		tc.movePosition(QTextCursor::End);
 		g.mw->qteLog->setTextCursor(tc);
 
