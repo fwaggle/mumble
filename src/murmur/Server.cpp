@@ -139,6 +139,14 @@ Server::Server(int snum, QObject *p) : QThread(p) {
 		sockopt = 1;
 		if (setsockopt(sock, IPPROTO_IPV6, IPV6_RECVPKTINFO, &sockopt, sizeof(sockopt)))
 			log(QString("Failed to set IPV6_RECVPKTINFO for %1").arg(addressToString(ss->serverAddress(), usPort)));
+#else
+		int sockopt = 1;
+		if (setsockopt(sock, IPPROTO_IP, IP_RECVDSTADDR, &sockopt, sizeof(sockopt)))
+			log(QString("Failed to set IP_RECVDSTADDR for %1").arg(addressToString(ss->serverAddress(), usPort)));
+		sockopt = 1;
+		if (setsockopt(sock, IPPROTO_IPV6, IPV6_RECVPKTINFO, &sockopt, sizeof(sockopt)))
+			log(QString("Failed to set IPV6_RECVPKTINFO for %1").arg(addressToString(ss->serverAddress(), usPort)));
+		
 #endif
 #else
 #ifndef SIO_UDP_CONNRESET
@@ -531,14 +539,15 @@ void Server::udpActivated(int socket) {
 	char encrypt[UDP_PACKET_SIZE];
 	sockaddr_storage from;
 #ifdef Q_OS_UNIX
-#ifdef Q_OS_LINUX
+#if 1
+//def Q_OS_LINUX
 	struct msghdr msg;
 	struct iovec iov[1];
 
 	iov[0].iov_base = encrypt;
 	iov[0].iov_len = UDP_PACKET_SIZE;
 
-	u_char controldata[CMSG_SPACE(MAX(sizeof(struct in6_pktinfo),sizeof(struct in_pktinfo)))];
+	u_char controldata[CMSG_SPACE(MAX(sizeof(struct in6_pktinfo),sizeof(struct in_addr)))];
 
 	memset(&msg, 0, sizeof(msg));
 	msg.msg_name = reinterpret_cast<struct sockaddr *>(&from);
@@ -569,7 +578,8 @@ void Server::udpActivated(int socket) {
 		ping[4] = qToBigEndian(static_cast<quint32>(iMaxUsers));
 		ping[5] = qToBigEndian(static_cast<quint32>(iMaxBandwidth));
 
-#ifdef Q_OS_LINUX
+#if 1
+//def Q_OS_LINUX
 		// There will be space for only one header, and the only data we have asked for is the incoming
 		// address. So we can reuse most of the same msg and control data.
 		iov[0].iov_len = 6 * sizeof(quint32);
@@ -666,14 +676,15 @@ void Server::run() {
 #ifdef Q_OS_WIN
 				len=::recvfrom(sock, encrypt, UDP_PACKET_SIZE, 0, reinterpret_cast<struct sockaddr *>(&from), &fromlen);
 #else
-#ifdef Q_OS_LINUX
+#if 1
+//def Q_OS_LINUX
 				struct msghdr msg;
 				struct iovec iov[1];
 
 				iov[0].iov_base = encrypt;
 				iov[0].iov_len = UDP_PACKET_SIZE;
 
-				u_char controldata[CMSG_SPACE(MAX(sizeof(struct in6_pktinfo),sizeof(struct in_pktinfo)))];
+				u_char controldata[CMSG_SPACE(MAX(sizeof(struct in6_pktinfo),sizeof(struct in_addr)))];
 
 				memset(&msg, 0, sizeof(msg));
 				msg.msg_name = reinterpret_cast<struct sockaddr *>(&from);
@@ -710,7 +721,8 @@ void Server::run() {
 					ping[4] = qToBigEndian(static_cast<quint32>(iMaxUsers));
 					ping[5] = qToBigEndian(static_cast<quint32>(iMaxBandwidth));
 
-#ifdef Q_OS_LINUX
+#if 1
+//def Q_OS_LINUX
 					iov[0].iov_len = 6 * sizeof(quint32);
 					::sendmsg(sock, &msg, 0);
 #else
@@ -816,14 +828,15 @@ void Server::sendMessage(ServerUser *u, const char *data, int len, QByteArray &c
 		if (Meta::hQoS)
 			QOSAddSocketToFlow(Meta::hQoS, u->sUdpSocket, reinterpret_cast<struct sockaddr *>(& u->saiUdpAddress), QOSTrafficTypeVoice, QOS_NON_ADAPTIVE_FLOW, &dwFlow);
 #endif
-#ifdef Q_OS_LINUX
+#if 1
+//def Q_OS_LINUX
 		struct msghdr msg;
 		struct iovec iov[1];
 
 		iov[0].iov_base = buffer;
 		iov[0].iov_len = len+4;
 
-		u_char controldata[CMSG_SPACE(MAX(sizeof(struct in6_pktinfo),sizeof(struct in_pktinfo)))];
+		u_char controldata[CMSG_SPACE(MAX(sizeof(struct in6_addr),sizeof(struct in_addr)))];
 		memset(controldata, 0, sizeof(controldata));
 
 		memset(&msg, 0, sizeof(msg));
@@ -832,7 +845,7 @@ void Server::sendMessage(ServerUser *u, const char *data, int len, QByteArray &c
 		msg.msg_iov = iov;
 		msg.msg_iovlen = 1;
 		msg.msg_control = controldata;
-		msg.msg_controllen = CMSG_SPACE((u->saiUdpAddress.ss_family == AF_INET6) ? sizeof(struct in6_pktinfo) : sizeof(struct in_pktinfo));
+		msg.msg_controllen = CMSG_SPACE((u->saiUdpAddress.ss_family == AF_INET6) ? sizeof(struct in6_addr) : sizeof(struct in_addr));
 
 		struct cmsghdr *cmsg = CMSG_FIRSTHDR(&msg);
 		if (u->saiTcpLocalAddress.ss_family == AF_INET6) {
@@ -844,11 +857,13 @@ void Server::sendMessage(ServerUser *u, const char *data, int len, QByteArray &c
 			pktinfo->ipi6_addr =  reinterpret_cast<struct sockaddr_in6 *>(& u->saiTcpLocalAddress)->sin6_addr;
 		} else {
 			cmsg->cmsg_level = IPPROTO_IP;
-			cmsg->cmsg_type = IP_PKTINFO;
-			cmsg->cmsg_len = CMSG_LEN(sizeof(struct in_pktinfo));
-			struct in_pktinfo *pktinfo = reinterpret_cast<struct in_pktinfo *>(CMSG_DATA(cmsg));
-			memset(pktinfo, 0, sizeof(*pktinfo));
-			pktinfo->ipi_spec_dst =  reinterpret_cast<struct sockaddr_in *>(& u->saiTcpLocalAddress)->sin_addr;
+			cmsg->cmsg_type = IP_SENDSRCADDR;
+			cmsg->cmsg_len = CMSG_LEN(sizeof(struct in_addr));
+			memcpy((struct in_addr *)CMSG_DATA(cmsg),
+				&(reinterpret_cast<struct sockaddr_in *>(& u->saiTcpLocalAddress)->sin_addr), sizeof(struct in_addr));
+//			struct in_pktinfo *pktinfo = reinterpret_cast<struct in_pktinfo *>(CMSG_DATA(cmsg));
+//			memset(pktinfo, 0, sizeof(*pktinfo));
+//			pktinfo->ipi_spec_dst =  reinterpret_cast<struct sockaddr_in *>(& u->saiTcpLocalAddress)->sin_addr;
 		}
 
 
