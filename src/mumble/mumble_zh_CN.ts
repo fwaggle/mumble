@@ -42,7 +42,7 @@
     <message>
         <location line="+37"/>
         <source>This grants the %1 privilege. If a privilege is both allowed and denied, it is denied.&lt;br /&gt;%2</source>
-        <translation type="unfinished">允许 %1 权限，如果一个权限同时被允许和拒绝，他将被拒绝。&lt;br /&gt;%2</translation>
+        <translation>允许 %1 权限。如果一个权限被同时被设置为允许和拒绝，那么将被视为拒绝。&lt;br /&gt;%2</translation>
     </message>
     <message>
         <location line="+123"/>
@@ -52,7 +52,7 @@
     <message>
         <location line="-131"/>
         <source>This revokes the %1 privilege. If a privilege is both allowed and denied, it is denied.&lt;br /&gt;%2</source>
-        <translation type="unfinished">取消 %1 权限。如果一个权限被同时允许和拒绝， 他将被拒绝。&lt;br /&gt;%2</translation>
+        <translation>拒绝 %1 权限。如果一个权限被同时被设置为允许和拒绝，那么将被视为拒绝。&lt;br /&gt;%2</translation>
     </message>
     <message>
         <location filename="ACLEditor.ui"/>
@@ -62,7 +62,7 @@
     <message>
         <location/>
         <source>Name</source>
-        <translation>名称</translation>
+        <translation>频道名</translation>
     </message>
     <message>
         <location/>
@@ -72,7 +72,7 @@
     <message>
         <location/>
         <source>Description</source>
-        <translation>描述</translation>
+        <translation>说明</translation>
     </message>
     <message>
         <location/>
@@ -87,7 +87,7 @@
     <message>
         <location/>
         <source>Check to create a temporary channel.</source>
-        <translation>勾选此项以创建一个临时频道。</translation>
+        <translation>勾选此项将创建一个临时频道。</translation>
     </message>
     <message>
         <location/>
@@ -106,7 +106,7 @@ This value enables you to change the way Mumble arranges the channels in the tre
         <oldsource>&lt;b&gt;Position&lt;/b&gt;&lt;br/&gt;
 This value enables you to change the way mumble arranges the channels in the tree. A channel with a higher &lt;i&gt;Position&lt;/i&gt; value will always be placed below one with a lower value and the other way around. If the &lt;i&gt;Position&lt;/i&gt; value of two channels is equal they will get sorted alphabetically by their name.</oldsource>
         <translation>&lt;b&gt;位置&lt;/b&gt;&lt;br/&gt;
-这个值允许你在频道树形列表中改变频道的位置。一个拥有较高&lt;i&gt;位置&lt;/i&gt; 的值的频道的位置总是被拥有较低值的频道取代。如果两个频道的 &lt;i&gt;位置&lt;/i&gt;的值相同，他们将以名称顺序排列。</translation>
+你可以改变这个值从而改变这个频道在树形列表中的位置。&lt;i&gt;位置&lt;/i&gt;数值较大的频道总是被排在数值较低的频道后面。如果两个频道的 &lt;i&gt;位置&lt;/i&gt;数值相同，将自动按照他们的名字的顺序进行排列。</translation>
     </message>
     <message>
         <location/>
@@ -141,7 +141,7 @@ This value enables you to change the way mumble arranges the channels in the tre
     <message>
         <location/>
         <source>Inherit group members from parent</source>
-        <translation>从父组继承成员</translation>
+        <translation>从父频道继承分组成员</translation>
     </message>
     <message>
         <location/>
@@ -161,12 +161,12 @@ This value enables you to change the way mumble arranges the channels in the tre
     <message>
         <location/>
         <source>Group was inherited from parent channel</source>
-        <translation>分组是从父频道继承的</translation>
+        <translation>分组继承自父频道</translation>
     </message>
     <message>
         <location/>
         <source>Inherited</source>
-        <translation>继承</translation>
+        <translation>继承自父频道</translation>
     </message>
     <message>
         <location/>
@@ -181,7 +181,7 @@ This value enables you to change the way mumble arranges the channels in the tre
     <message>
         <location/>
         <source>Add member to group</source>
-        <translation>添加成员到分组</translation>
+        <translation>将成员添加到分组</translation>
     </message>
     <message>
         <location/>
@@ -196,7 +196,7 @@ This value enables you to change the way mumble arranges the channels in the tre
     <message>
         <location/>
         <source>Active ACLs</source>
-        <translation>激活的ACL列表</translation>
+        <translation>当前ACL</translation>
     </message>
     <message>
         <location/>
@@ -211,7 +211,7 @@ This value enables you to change the way mumble arranges the channels in the tre
     <message>
         <location/>
         <source>This sets whether or not the ACL up the chain of parent channels are applied to this object. Only those entries that are marked in the parent as &quot;Apply to sub-channels&quot; will be inherited.</source>
-        <translation>设置是否应用从父频道继承的ALC选项。只有那些被标记为“应到到子频道”的选项才会被继承。</translation>
+        <translation>设置是否应用从父频道继承的ALC选项。只有那些被选择了“应到到子频道”选项的规则才能被继承。</translation>
     </message>
     <message>
         <location/>
@@ -221,12 +221,12 @@ This value enables you to change the way mumble arranges the channels in the tre
     <message>
         <location/>
         <source>Move entry up</source>
-        <translation>规则上移</translation>
+        <translation>向上移动规则</translation>
     </message>
     <message>
         <location/>
         <source>This moves the entry up in the list. As entries are evaluated in order, this may change the effective permissions of users. You cannot move an entry above an inherited entry, if you really need that you&apos;ll have to duplicate the inherited entry.</source>
-        <translation>将列表中的选项向上移动。一个选项通过顺序来决定优先级，这将会改变用户的权限租用。你不能移动一个权限到继承的权限之前。如果你确实需要那样做你需要建立一个重复的选项。</translation>
+        <translation>将规则在列表中的位置向上移动。规则通过其在列表中的顺序决定其优先级，并由此改变用户的权限。被继承的规则总是位于列表的顶部。如果你需要将一条规则放置于被继承的规则之前，你需要创建一个完全和它相同的规则。</translation>
     </message>
     <message>
         <location/>
@@ -236,12 +236,12 @@ This value enables you to change the way mumble arranges the channels in the tre
     <message>
         <location/>
         <source>Move entry down</source>
-        <translation>规则下移</translation>
+        <translation>向下移动规则</translation>
     </message>
     <message>
         <location/>
         <source>This moves the entry down in the list. As entries are evaluated in order, this may change the effective permissions of users.</source>
-        <translation>将选项在列表中的位置下移。选项通过顺序决定优先级，这将会改变用户的权限效果。</translation>
+        <translation>将规则在列表中的位置向下移动。规则通过其在列表中的顺序决定其优先级，并由此改变用户的权限。</translation>
     </message>
     <message>
         <location/>
@@ -256,7 +256,7 @@ This value enables you to change the way mumble arranges the channels in the tre
     <message>
         <location/>
         <source>This adds a new entry, initially set with no permissions and applying to all.</source>
-        <translation>添加一个新的选项。默认没有任何权限而且对所有人生效。</translation>
+        <translation>添加一个新的规则。新建立的规则默认不对任何权限进行修改而且应用于所有人。</translation>
     </message>
     <message>
         <location/>
@@ -281,28 +281,28 @@ This value enables you to change the way mumble arranges the channels in the tre
     <message>
         <location/>
         <source>Context</source>
-        <translation>关系</translation>
+        <translation>应用</translation>
     </message>
     <message>
         <location/>
         <source>Entry should apply to this channel.</source>
         <oldsource>Entry should apply to this channel</oldsource>
-        <translation>规则作用于该频道。</translation>
+        <translation>将规则应用于该频道。</translation>
     </message>
     <message>
         <location/>
         <source>This makes the entry apply to this channel.</source>
-        <translation>这将设置规则作用于该频道。</translation>
+        <translation>设置规则应用于该频道。</translation>
     </message>
     <message>
         <location/>
         <source>Applies to this channel</source>
-        <translation>作用于该频道</translation>
+        <translation>应用于该频道</translation>
     </message>
     <message>
         <location/>
         <source>Entry should apply to sub-channels.</source>
-        <translation>规则将作用于子频道。</translation>
+        <translation>规则将应用于子频道。</translation>
     </message>
     <message>
         <location/>
@@ -319,27 +319,27 @@ Add a new group.</source>
     <message>
         <location/>
         <source>Inherited members</source>
-        <translation>被继承的成员</translation>
+        <translation>继承的成员</translation>
     </message>
     <message>
         <location/>
         <source>Contains the list of members added to the group by this channel.</source>
-        <translation>显示被该频道添加到分组的成员。</translation>
+        <translation>这个名单包括了被该频道添加到这个分组的成员。</translation>
     </message>
     <message>
         <location/>
         <source>Contains a list of members whose group membership will not be inherited from the parent channel.</source>
-        <translation>显示将不从父频道继承的分组成员。</translation>
+        <translation>这个名单包括了将不从父频道的分组继承的成员。</translation>
     </message>
     <message>
         <location/>
         <source>Contains the list of members inherited by other channels.</source>
-        <translation>显示被其他频道继承的成员列表。</translation>
+        <translation>包括了从其他频道继承的成员列表。</translation>
     </message>
     <message>
         <location/>
         <source>Type in the name of a user you wish to add to the group and click Add.</source>
-        <translation>输入你希望添加到分组的用户的名称并点击添加。</translation>
+        <translation>在这里输入你希望添加到分组的用户的名称并点击添加。</translation>
     </message>
     <message>
         <location/>
@@ -349,17 +349,17 @@ Add a new group.</source>
     <message>
         <location/>
         <source>Exclude</source>
-        <translation>例外</translation>
+        <translation>排除</translation>
     </message>
     <message>
         <location/>
         <source>Excluded members</source>
-        <translation>例外成员</translation>
+        <translation>被排除的成员</translation>
     </message>
     <message>
         <location/>
         <source>This makes the entry apply to sub-channels of this channel.</source>
-        <translation>这将使规则作用于这个频道的所有子频道。</translation>
+        <translation>将规则应用于这个频道的所有子频道。</translation>
     </message>
     <message>
         <location/>
@@ -369,7 +369,7 @@ Add a new group.</source>
     <message>
         <location/>
         <source>Permissions</source>
-        <translation>许可</translation>
+        <translation>权限</translation>
     </message>
     <message>
         <location/>
@@ -394,58 +394,58 @@ Add a new group.</source>
     <message>
         <location/>
         <source>This controls which user this entry applies to. Just type in the user name and hit enter to query the server for a match.</source>
-        <translation>控制这个选项将对那些用户其作用。请输入用户名并点击确认以匹配服务器。</translation>
+        <translation>选择这个规则将应用于哪个用户。请输入用户名并选择服务器上已经注册的匹配用户名。</translation>
     </message>
     <message>
         <location/>
         <source>&amp;Properties</source>
-        <translation>属性(&amp;P)</translation>
+        <translation>基本(&amp;P)</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Name&lt;/b&gt;&lt;br /&gt;Enter the channel name in this field. The name has to comply with the restriction imposed by the server you are connected to.</source>
-        <translation>&lt;b&gt;名称&lt;/b&gt;&lt;br /&gt;在这里输入频道的名称。这个名称需要符合你所连接的服务器的规则。</translation>
+        <translation>&lt;b&gt;名称&lt;/b&gt;&lt;br /&gt;在这里输入频道的名称。这个名称需要符合你所连接的服务器的命名规则。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Temporary&lt;/b&gt;&lt;br /&gt;
 When checked the channel created will be marked as temporary. This means when the last player leaves it the channel will be automatically deleted by the server.</source>
         <translation>&lt;b&gt;临时频道&lt;/b&gt;&lt;br /&gt;
-当选择后将创建一个临时频道。这意味着当最后一个用户离开后频道将被服务器自动删除。</translation>
+当选择后将创建一个临时频道。当最后一个用户离开后，服务器自动删除这个频道。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Group&lt;/b&gt;&lt;br /&gt;
 These are all the groups currently defined for the channel. To create a new group, just type in the name and press enter.</source>
         <translation>&lt;b&gt;分组&lt;/b&gt;&lt;br /&gt;
-频道目前已经定义的所有分组。要创建一个新的分组，只需要输入名称并点击回车。</translation>
+频道目前已经定义的所有分组。要创建一个新的分组，只需要输入名称然后按下回车。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Remove&lt;/b&gt;&lt;br /&gt;This removes the currently selected group. If the group was inherited, it will not be removed from the list, but all local information about the group will be cleared.</source>
-        <translation>&lt;b&gt;删除&lt;/b&gt;&lt;br /&gt;删除当前所选分组。如果一个分组是集成的，将无法从列表中删除，不过所有关于这个分组的本地信息将被清除。</translation>
+        <translation>&lt;b&gt;删除&lt;/b&gt;&lt;br /&gt;删除当前所选分组。你无法从列表中删除一个继承的分组，但是该频道对这个分组的操作将被清除。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Inherit&lt;/b&gt;&lt;br /&gt;This inherits all the members in the group from the parent, if the group is marked as &lt;i&gt;Inheritable&lt;/i&gt; in the parent channel.</source>
-        <translation>&lt;b&gt;继承&lt;/b&gt;&lt;br /&gt;从父级那里继承这个分组的所有成员，如果这个分组在父频道被标记为&lt;i&gt;可继承&lt;/i&gt;的话。</translation>
+        <translation>&lt;b&gt;继承&lt;/b&gt;&lt;br /&gt;从父频道继承这个分组的所有成员，如果这个分组在父频道被定义为&lt;i&gt;可继承&lt;/i&gt;的话。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Inheritable&lt;/b&gt;&lt;br /&gt;This makes this group inheritable to sub-channels. If the group is non-inheritable, sub-channels are still free to create a new group with the same name.</source>
-        <translation>&lt;b&gt;可继承&lt;/b&gt;&lt;br /&gt;标记这个分组能够被子频道继承。如果分组不可被继承，子频道也可以自由建立一个同样的新分组。</translation>
+        <translation>&lt;b&gt;可继承&lt;/b&gt;&lt;br /&gt;标记这个分组能够被子频道继承。如果分组不可被继承，子频道可以自由建立一个同名的新分组。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Inherited&lt;/b&gt;&lt;br /&gt;This indicates that the group was inherited from the parent channel. You cannot edit this flag, it&apos;s just for information.</source>
-        <translation>&lt;b&gt;继承&lt;/b&gt;&lt;br /&gt;分组是从父频道继承来的，你不能编辑这个标识，这仅是一个信息。</translation>
+        <translation>&lt;b&gt;从父频道继承&lt;/b&gt;&lt;br /&gt;分组继承自父频道，你不能编辑这个标签，这仅是一个信息。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Members&lt;/b&gt;&lt;br /&gt;
 This list contains all members that were added to the group by the current channel. Be aware that this does not include members inherited by higher levels of the channel tree. These can be found in the &lt;i&gt;Inherited members&lt;/i&gt; list. To prevent this list to be inherited by lower level channels uncheck &lt;i&gt;Inheritable&lt;/i&gt; or manually add the members to the &lt;i&gt;Excluded members&lt;/i&gt; list.</source>
         <translation>&lt;b&gt;成员&lt;/b&gt;&lt;br /&gt;
-这个列表包含了所有被当前频道添加到这个分组的成员。请注意这里不包含在频道树中处于更高一层的频道的成员。他们将可以在 &lt;i&gt;继承的成员&lt;/i&gt;列表中被找到。如果不希望成员被低层级的频道继承，可以取消选择&lt;i&gt;可继承&lt;/i&gt;选项或者将成员添加到&lt;i&gt;例外成员&lt;/i&gt; 列表。</translation>
+这个列表包含了所有被当前频道添加到这个分组的成员。注意：这里不包括从其他频道继承的成员。你将在 &lt;i&gt;继承的成员&lt;/i&gt;列表中找到找到。如果不希望成员被子频道继承，请不要勾选&lt;i&gt;可继承&lt;/i&gt;选项或者将在子频道中将成员添加到&lt;i&gt;被排除的成员&lt;/i&gt; 列表。</translation>
     </message>
     <message>
         <location/>
@@ -464,17 +464,17 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>This controls which group of users this entry applies to.&lt;br /&gt;Note that the group is evaluated in the context of the channel the entry is used in. For example, the default ACL on the Root channel gives &lt;i&gt;Write&lt;/i&gt; permission to the &lt;i&gt;admin&lt;/i&gt; group. This entry, if inherited by a channel, will give a user write privileges if he belongs to the &lt;i&gt;admin&lt;/i&gt; group in that channel, even if he doesn&apos;t belong to the &lt;i&gt;admin&lt;/i&gt; group in the channel where the ACL originated.&lt;br /&gt;If a group name starts with &apos;!&apos;, its membership is negated, and if it starts with &apos;~&apos;, it is evaluated in the channel the ACL was defined in, rather than the channel the ACL is active in.&lt;br /&gt;If a group name starts with &apos;#&apos;, it is interpreted as an access token. Users must have entered whatever follows the &apos;#&apos; in their list of access tokens to match. This can be used for very simple password access to channels for non-authenticated users.&lt;br /&gt;If a group name starts with &apos;$&apos;, it will only match users whose certificate hash matches what follows the &apos;$&apos;.&lt;br /&gt;A few special predefined groups are:&lt;br /&gt;&lt;b&gt;all&lt;/b&gt; - Everyone will match.&lt;br /&gt;&lt;b&gt;auth&lt;/b&gt; - All authenticated users will match.&lt;br /&gt;&lt;b&gt;sub,a,b,c&lt;/b&gt; - User currently in a sub-channel minimum &lt;i&gt;a&lt;/i&gt; common parents, and between &lt;i&gt;b&lt;/i&gt; and &lt;i&gt;c&lt;/i&gt; channels down the chain. See the website for more extensive documentation on this one.&lt;br /&gt;&lt;b&gt;in&lt;/b&gt; - Users currently in the channel will match (convenience for &apos;&lt;i&gt;sub,0,0,0&lt;/i&gt;&apos;).&lt;br /&gt;&lt;b&gt;out&lt;/b&gt; - Users outside the channel will match (convenience for &apos;&lt;i&gt;!sub,0,0,0&lt;/i&gt;&apos;).&lt;br /&gt;Note that an entry applies to either a user or a group, not both.</source>
-        <translation type="unfinished">控制选项将作用与哪个分组。&lt;br /&gt;注意分组通过名称被选项识别。例如：根频道默认将 ACL 的&lt;i&gt;编辑&lt;/i&gt;权限给 &lt;i&gt;admin&lt;/i&gt; 分组。这个选项，如果被一个频道继承，将同样给所有在那个频道的 &lt;i&gt;admin&lt;/i&gt; 分组中的成员编辑ACL的权限，即使他不属于创建ACL选项的频道的 &lt;i&gt;admin&lt;/i&gt; 分组。&lt;br /&gt;如果一个分组名以 &apos;!&apos; 开始，他的成员关系是相反的，而如果以&apos;~&apos;开始， its membership is negated, and if it starts with &apos;~&apos;, 他的权限将优先考虑这个频道所定义的ACL ，而不是对激活的ACL。&lt;br /&gt;如果一个分组以 &apos;#&apos; 开始，他是通过一个有效标记继承的。用户必须输入任何&apos;#&apos; 后面的内容来匹配有效标记。&lt;br /&gt; 如果一个分组以 &apos;$&apos; 开始，他将仅匹配 &apos;$&apos; 后的成员名。&lt;br /&gt;一些特殊的分组预定义分组：&lt;br /&gt;&lt;b&gt;all&lt;/b&gt; ——匹配所有人。&lt;br /&gt;&lt;b&gt;auth&lt;/b&gt; ——匹配所有认证用户&lt;br /&gt;&lt;b&gt;sub,a,b,c&lt;/b&gt; ——用户当前位于一个和&lt;i&gt;a&lt;/i&gt;拥有共同的父级元素而且排列在频道&lt;i&gt;b&lt;/i&gt; 和&lt;i&gt;c&lt;/i&gt;之间的子频道中。&lt;br /&gt;&lt;b&gt;in&lt;/b&gt; ——匹配正在频道中的用户 (等同于 &apos;&lt;i&gt;sub,0,0,0&lt;/i&gt;&apos;) 。&lt;br /&gt;&lt;b&gt;out&lt;/b&gt; ——匹配不在频道中的用户 (等同于 &apos;&lt;i&gt;!sub,0,0,0&lt;/i&gt;&apos;).&lt;br /&gt;注意一个选项只能作用于一个分组或者用户。</translation>
+        <translation>控制选项将作用与哪个分组。&lt;br /&gt;注意分组通过名称被选项识别。例如：根频道默认将 ACL 的&lt;i&gt;编辑&lt;/i&gt;权限给 &lt;i&gt;admin&lt;/i&gt; 分组。这个选项，如果被一个频道继承，将同样给所有在那个频道的 &lt;i&gt;admin&lt;/i&gt; 分组中的成员编辑ACL的权限，即使他不属于创建ACL选项的频道的 &lt;i&gt;admin&lt;/i&gt; 分组。&lt;br /&gt;如果一个分组名以 &apos;!&apos; 开始，他的成员关系是相反的，而如果以&apos;~&apos;开始， its membership is negated, and if it starts with &apos;~&apos;, 他的权限将优先考虑这个频道所定义的ACL ，而不是对激活的ACL。&lt;br /&gt;如果一个分组以 &apos;#&apos; 开始，他是通过一个有效标记继承的。用户必须输入任何&apos;#&apos; 后面的内容来匹配有效标记。&lt;br /&gt; 如果一个分组以 &apos;$&apos; 开始，他将仅匹配 &apos;$&apos; 后的成员名。&lt;br /&gt;一些特殊的分组预定义分组：&lt;br /&gt;&lt;b&gt;all&lt;/b&gt; ——匹配所有人。&lt;br /&gt;&lt;b&gt;auth&lt;/b&gt; ——匹配所有认证用户&lt;br /&gt;&lt;b&gt;sub,a,b,c&lt;/b&gt; ——用户当前位于一个和&lt;i&gt;a&lt;/i&gt;拥有共同的父级元素而且排列在频道&lt;i&gt;b&lt;/i&gt; 和&lt;i&gt;c&lt;/i&gt;之间的子频道中。&lt;br /&gt;&lt;b&gt;in&lt;/b&gt; ——匹配正在频道中的用户 (等同于 &apos;&lt;i&gt;sub,0,0,0&lt;/i&gt;&apos;) 。&lt;br /&gt;&lt;b&gt;out&lt;/b&gt; ——匹配不在频道中的用户 (等同于 &apos;&lt;i&gt;!sub,0,0,0&lt;/i&gt;&apos;).&lt;br /&gt;注意一个选项只能作用于一个分组或者用户。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Password&lt;/b&gt;&lt;br /&gt;This field allows you to easily set and change the password of a channel. It uses Mumble&apos;s access tokens feature in the background. Use ACLs and groups if you need more fine grained and powerful access control.</source>
-        <translation>&lt;b&gt;密码&lt;/b&gt;&lt;br /&gt;这里允许你为一个频道设置或改变一个密码。他将在后台使用成员的有效标记。使用ACL可分组可以让你更好的进行访问控制。</translation>
+        <translation>&lt;b&gt;密码&lt;/b&gt;&lt;br /&gt;这里允许你为一个频道设置或改变一个密码。他将在后台自动使用成员的访问标记。使用ACL和分组可以让你更好的进行访问控制。</translation>
     </message>
     <message>
         <location/>
         <source>This shows all the entries active on this channel. Entries inherited from parent channels will be shown in italics.&lt;br /&gt;ACLs are evaluated top to bottom, meaning priority increases as you move down the list.</source>
-        <translation>显示了当前频道被激活的所有选项。从父频道继承的选项被静态显示。&lt;br /&gt;ACL 的优先级是自上而下增加的，这意味着列表最下面的选项拥有最高的优先级。</translation>
+        <translation>显示了这个频道当前的所有规则。从父频道继承的规则将无法被修改。&lt;br /&gt;ACL 从上往下判定的，列表最下面的选项拥有最高的优先级。</translation>
     </message>
 </context>
 <context>
@@ -526,7 +526,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <location line="-21"/>
         <location line="+25"/>
         <source>Failed to instantiate ASIO driver</source>
-        <translation type="unfinished">创建ASIO驱动实例失败</translation>
+        <translation>创建ASIO驱动实例失败</translation>
     </message>
     <message>
         <location line="+37"/>
@@ -541,7 +541,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Device selection</source>
-        <translation>选择设备</translation>
+        <translation>设备选择</translation>
     </message>
     <message>
         <location/>
@@ -556,12 +556,12 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>This chooses what device to query. You still need to actually query the device and select which channels to use.</source>
-        <translation>这个将选择需要询问的设备。你需要激活测试设备并且选择需要使用的频道。</translation>
+        <translation type="unfinished">选择需要查询的设备。你仍然需要查询设备并且选择需要使用的频道。</translation>
     </message>
     <message>
         <location/>
         <source>Query selected device</source>
-        <translation>询问所选设备</translation>
+        <translation type="unfinished">查询所选设备</translation>
     </message>
     <message>
         <location/>
@@ -571,12 +571,12 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>&amp;Query</source>
-        <translation>询问(&amp;Q)</translation>
+        <translation>查询(&amp;Q)</translation>
     </message>
     <message>
         <location/>
         <source>Configure selected device</source>
-        <translation>设置所选设备</translation>
+        <translation>配置所选设备</translation>
     </message>
     <message>
         <location/>
@@ -586,7 +586,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>&amp;Configure</source>
-        <translation>设置(&amp;C)</translation>
+        <translation>配置(&amp;C)</translation>
     </message>
     <message>
         <location/>
@@ -601,7 +601,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Buffer size</source>
-        <translation type="unfinished"></translation>
+        <translation>缓冲区大小</translation>
     </message>
     <message>
         <location/>
@@ -611,7 +611,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Configure input channels</source>
-        <translation>设置输入频道</translation>
+        <translation type="unfinished">配置输入频道</translation>
     </message>
     <message>
         <location/>
@@ -649,7 +649,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location filename="ASIOInput.cpp" line="+80"/>
         <source>You need to select at least one microphone and one speaker source to use ASIO. If you just need microphone sampling, use DirectSound.</source>
-        <translation type="unfinished">你需要至少选择一个麦克风和扬声器源才能使用ASIO。如果只需要麦克风抽样，使用DirectSound。</translation>
+        <translation>你需要至少为ASIO选择一个麦克风和扬声器源。如果只需要麦克风抽样，使用DirectSound。</translation>
     </message>
     <message>
         <location line="+103"/>
@@ -662,7 +662,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location filename="About.cpp" line="+37"/>
         <source>About Mumble</source>
-        <translation>关于 Mumble</translation>
+        <translation>关于 Mumble (哝哝)语音精灵</translation>
     </message>
     <message>
         <location line="+16"/>
@@ -672,12 +672,12 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location line="+10"/>
         <source>&amp;About Mumble</source>
-        <translation type="unfinished">关于 Mumble(&amp;A) </translation>
+        <translation>关于 Mumble 语音精灵(&amp;A)</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&amp;License</source>
-        <translation type="unfinished">版权认证(&amp;L)</translation>
+        <translation>许可(&amp;L)</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -695,7 +695,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location line="+4"/>
         <source>&lt;h3&gt;About Speex&lt;/h3&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;&lt;p&gt;This program uses SpeexDSP.&lt;/p&gt;&lt;p&gt;Speex is used for echo cancellation, noise&lt;br /&gt;filtering and voice activity detection.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;h3&gt;关于Speex&lt;/h3&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;&lt;p&gt;这个程序使用SpeexDSP。&lt;/p&gt;&lt;p&gt;Speex 被用于回音消除、噪音&lt;br /&gt;抑制及语音激活检测&lt;/p&gt;</translation>
+        <translation>&lt;h3&gt;关于Speex&lt;/h3&gt;&lt;p&gt;&lt;tt&gt;&lt;a href=&quot;%1&quot;&gt;%1&lt;/a&gt;&lt;/tt&gt;&lt;/p&gt;&lt;p&gt;这个程序使用SpeexDSP。&lt;/p&gt;&lt;p&gt;Speex 被用于回音消除、噪音&lt;br /&gt;抑制及语音激活检测&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+8"/>
@@ -738,17 +738,17 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Input device for audio</source>
-        <translation>语音输入设备</translation>
+        <translation>音频输入设备</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This is the input device to use for audio.&lt;/b&gt;</source>
-        <translation type="unfinished">你的音频将使用的输入设备</translation>
+        <translation>&lt;b&gt;音频输入设备&lt;/b&gt;</translation>
     </message>
     <message>
         <location/>
         <source>Transmission</source>
-        <translation type="unfinished">发送</translation>
+        <translation>发送</translation>
     </message>
     <message>
         <location/>
@@ -758,62 +758,62 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>When to transmit your speech</source>
-        <translation>当你说话时发送</translation>
+        <translation>何时发送你的发言</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This sets when speech should be transmitted.&lt;/b&gt;&lt;br /&gt;&lt;i&gt;Continuous&lt;/i&gt; - All the time&lt;br /&gt;&lt;i&gt;Voice Activity&lt;/i&gt; - When you are speaking clearly.&lt;br /&gt;&lt;i&gt;Push To Talk&lt;/i&gt; - When you hold down the hotkey set under &lt;i&gt;Shortcuts&lt;/i&gt;.</source>
-        <translation>&lt;b&gt;设置何时发送你说的话。&lt;/b&gt;&lt;br /&gt;&lt;i&gt;持续&lt;/i&gt;——任何时间；&lt;br /&gt;&lt;i&gt;语音激活&lt;/i&gt;——当你清楚的说话时；&lt;br /&gt;&lt;i&gt;按键说话&lt;/i&gt;——当你按住你设置的&lt;i&gt;快捷键&lt;/i&gt;时。</translation>
+        <translation>&lt;b&gt;设置何时发送发送你的发言。&lt;/b&gt;&lt;br /&gt;&lt;i&gt;持续&lt;/i&gt;——任何时间；&lt;br /&gt;&lt;i&gt;语音激活&lt;/i&gt;——当你清楚的说话时；&lt;br /&gt;&lt;i&gt;按键发言&lt;/i&gt;——当你按住你设置的&lt;i&gt;快捷键&lt;/i&gt;时。</translation>
     </message>
     <message>
         <location/>
         <source>DoublePush Time</source>
-        <translation>双击时间</translation>
+        <translation>双击时延</translation>
     </message>
     <message>
         <location/>
         <source>If you press the PTT key twice in this time it will get locked.</source>
-        <translation>如果你在这个时间内连续按下 PFT(按键发音键)，它将会被锁定。</translation>
+        <translation>如果你在设定时间内连续按下 PFT(按键发音键)，则可以将其锁定。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;DoublePush Time&lt;/b&gt;&lt;br /&gt;If you press the push-to-talk key twice during the configured interval of time it will be locked. Mumble will keep transmitting until you hit the key once more to unlock PTT again.</source>
-        <translation type="unfinished">&lt;b&gt;双击时间&lt;/b&gt;&lt;br /&gt;如果你在设定的时间内连续两次点击 按键发音的键，将会锁定它。Mumble将会保持发送状态直到你再次点击这个键以解锁PFT。</translation>
+        <translation>&lt;b&gt;双击时间&lt;/b&gt;&lt;br /&gt;如果你在设定的时间内连续两次点击 按键发音的键，将会锁定它。Mumble将会保持发送状态直到你再次点击这个键以解锁PFT。</translation>
     </message>
     <message>
         <location/>
         <source>Reset audio cue to default</source>
-        <translation>重置音频提示到默认</translation>
+        <translation>重置提示音</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Reset&lt;/b&gt;&lt;br/&gt;Reset the paths for the files to their default.</source>
-        <translation>&lt;b&gt;重置&lt;/b&gt;&lt;br/&gt;重置文件的路径为默认值。</translation>
+        <translation>&lt;b&gt;重置&lt;/b&gt;&lt;br/&gt;将文件路径重置为默认值。</translation>
     </message>
     <message>
         <location/>
         <source>Browse for on audio file</source>
-        <translation>浏览打开时的音频文件</translation>
+        <translation>浏览(开始时)</translation>
     </message>
     <message>
         <location/>
         <source>Browse for off audio file</source>
-        <translation>浏览关闭时的音频文件</translation>
+        <translation>浏览浏览(停止时)</translation>
     </message>
     <message>
         <location/>
         <source>Off</source>
-        <translation>关闭</translation>
+        <translation>停止</translation>
     </message>
     <message>
         <location/>
         <source>On</source>
-        <translation>打开</translation>
+        <translation>开始</translation>
     </message>
     <message>
         <location/>
         <source>Preview the audio cues</source>
-        <translation>试听音频提示</translation>
+        <translation>试听提示音</translation>
     </message>
     <message>
         <location/>
@@ -828,7 +828,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>&lt;b&gt;This sets speech detection to use Amplitude.&lt;/b&gt;&lt;br /&gt;In this mode, the raw strength of the input signal is used to detect speech.</source>
-        <translation>&lt;b&gt;设置语音检测为振幅&lt;/b&gt;&lt;br /&gt;在这个模式下，输入信号的强度被用于检测是否在说哈。</translation>
+        <translation>&lt;b&gt;设置语音检测为振幅&lt;/b&gt;&lt;br /&gt;在这个模式下，将通过输入信号的强度进行检测。</translation>
     </message>
     <message>
         <location/>
@@ -853,17 +853,17 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>&lt;b&gt;This sets the trigger values for voice detection.&lt;/b&gt;&lt;br /&gt;Use this together with the Audio Statistics window to manually tune the trigger values for detecting speech. Input values below &quot;Silence Below&quot; always count as silence. Values above &quot;Speech Above&quot; always count as voice. Values in between will count as voice if you&apos;re already talking, but will not trigger a new detection.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;设置语音探测的触发值&lt;/b&gt;&lt;br /&gt;配合音频统计窗口控制语音探测的触发值。当输入低于“安静阈值”时将被视为安静；当输入高于”发言阈值“将被视为正在发言；而在这之间的输入则认为是你正准备说话，并不会触发新的检测。</translation>
     </message>
     <message>
         <location/>
         <source>Speech Above</source>
-        <translation>说话阈值</translation>
+        <translation>发言阈值</translation>
     </message>
     <message>
         <location/>
         <source>Signal values above this count as voice</source>
-        <translation>信号超过这个值即为语音</translation>
+        <translation>高于这个值的信号被视为发言</translation>
     </message>
     <message>
         <location/>
@@ -878,37 +878,37 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Quality of compression (peak bandwidth)</source>
-        <translation>压缩的质量(峰值带宽)</translation>
+        <translation>压缩质量(峰值带宽)</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This sets the quality of compression.&lt;/b&gt;&lt;br /&gt;This determines how much bandwidth Mumble is allowed to use for outgoing audio.</source>
-        <translation type="unfinished">&lt;b&gt;选择压缩的质量。&lt;/b&gt;&lt;br /&gt;指定 Mumble 传出的音频的带宽。</translation>
+        <translation>&lt;b&gt;选择压缩的质量。&lt;/b&gt;&lt;br /&gt;指定 Mumble 发送时的音频的带宽。</translation>
     </message>
     <message>
         <location/>
         <source>Audio per packet</source>
-        <translation type="unfinished">每包音频</translation>
+        <translation>每包帧数</translation>
     </message>
     <message>
         <location/>
         <source>How many audio frames to send per packet</source>
-        <translation type="unfinished">每个数据包中含有音频帧的数量</translation>
+        <translation>每个数据包中含有音频帧数</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This selects how many audio frames should be put in one packet.&lt;/b&gt;&lt;br /&gt;Increasing this will increase the latency of your voice, but will also reduce bandwidth requirements.</source>
-        <translation type="unfinished">&lt;b&gt;选择每个数据包中含有多少音频帧数&lt;/b&gt;&lt;br /&gt;增加这个数值会增加语音的延迟，但是也会降低带宽需求。</translation>
+        <translation>&lt;b&gt;选择每个数据包中含有多少音频帧数&lt;/b&gt;&lt;br /&gt;增加这个数值会增加语音的延迟，但是也会降低带宽需求。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This shows peak outgoing bandwidth used.&lt;/b&gt;&lt;br /&gt;This shows the peak amount of bandwidth sent out from your machine. Audio bitrate is the maximum bitrate (as we use VBR) for the audio data alone. Position is the bitrate used for positional information. Overhead is our framing and the IP packet headers (IP and UDP is 75% of this overhead).</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;显示传输时的带宽峰值&lt;/b&gt;&lt;br /&gt;显示了从你的机器发送语音信息所需总带宽的峰值。音频比特率是每个独立的音频数据的最大比特率(通常用VBR表示)。位置是用于位置信息的比特率。头部是我们的帧和IP数据报头(IP和UDP信息占头部的75%)。</translation>
     </message>
     <message>
         <location/>
         <source>Audio Processing</source>
-        <translation>音频处理</translation>
+        <translation>声音处理</translation>
     </message>
     <message>
         <location/>
@@ -923,7 +923,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>&lt;b&gt;This sets the amount of noise suppression to apply.&lt;/b&gt;&lt;br /&gt;The higher this value, the more aggressively stationary noise will be suppressed.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;设置所使用的噪音抑制的总量。&lt;/b&gt;&lt;br /&gt;这个值越高，就能更好的消除各种常规的噪音。</translation>
     </message>
     <message>
         <location/>
@@ -933,12 +933,12 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Maximum amplification of input sound</source>
-        <translation type="unfinished">输入的声音的最大放大量</translation>
+        <translation>输入的声音的最大放大量</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Maximum amplification of input.&lt;/b&gt;&lt;br /&gt;Mumble normalizes the input volume before compressing, and this sets how much it&apos;s allowed to amplify.&lt;br /&gt;The actual level is continually updated based on your current speech pattern, but it will never go above the level specified here.&lt;br /&gt;If the &lt;i&gt;Microphone loudness&lt;/i&gt; level of the audio statistics hover around 100%, you probably want to set this to 2.0 or so, but if, like most people, you are unable to reach 100%, set this to something much higher.&lt;br /&gt;Ideally, set it so &lt;i&gt;Microphone Loudness * Amplification Factor &gt;= 100&lt;/i&gt;, even when you&apos;re speaking really soft.&lt;br /&gt;&lt;br /&gt;Note that there is no harm in setting this to maximum, but Mumble will start picking up other conversations if you leave it to auto-tune to that level.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;输入的最大放大量。&lt;/b&gt;&lt;br /&gt;Mumble精灵会在压缩前将声音调整到统一的大小，而这将设置允许将声音放大多少。&lt;br /&gt;持续传输时的实际音量等级取决于你说话的方式，不过不过超过这里的指定值。&lt;br /&gt;如果音频静态的 &lt;i&gt;Microphone loudness&lt;/i&gt;等级一直保持在100%附近，你可能可以将这里设置为2.0甚至更低，但是大多数的人都无法达到100%，所以这里将设置的高的多。&lt;br /&gt;在理想状况，设置这里使得即使你轻声说话也可以达到 &lt;i&gt;麦克风响度＊放大因子&gt;= 100&lt;/i&gt;。注意：将这里设为最大值并没有什么不好，不过 Mumble 会将你周围的声音也收集起来。</translation>
     </message>
     <message>
         <location/>
@@ -958,7 +958,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Disabled</source>
-        <translation>不可用</translation>
+        <translation>关闭</translation>
     </message>
     <message>
         <location/>
@@ -973,17 +973,17 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Echo</source>
-        <translation>回声</translation>
+        <translation>回声消除</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This sets speech detection to use Signal to Noise ratio.&lt;/b&gt;&lt;br /&gt;In this mode, the input is analyzed for something resembling a clear signal, and the clarity of that signal is used to trigger speech detection.</source>
-        <translation type="unfinished">&lt;b&gt;通过信噪比检测你的是否正在说话。&lt;/b&gt;&lt;br /&gt;这个模式下，输入会分离出较清晰的信号，并且这些清晰的信号会激活语音检测。</translation>
+        <translation>&lt;b&gt;通过信噪比检测你的是否正在说话。&lt;/b&gt;&lt;br /&gt;这个模式下，会从输入中分离出较清晰的信号，并且通过这些清晰的信号触发语音检测。</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This shows the current speech detection settings.&lt;/b&gt;&lt;br /&gt;You can change the settings from the Settings dialog or from the Audio Wizard.</source>
-        <translation>&lt;b&gt;显示当前的语音检测设置。&lt;/b&gt;&lt;br /&gt;你可以从设置对话框或者音频向导改变设置。</translation>
+        <translation>&lt;b&gt;显示当前的语音检测设置。&lt;/b&gt;&lt;br /&gt;你可以通过“设置”对话框或者“音频向导”改变设置。</translation>
     </message>
     <message>
         <location/>
@@ -1008,7 +1008,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>&lt;b&gt;This selects how long after a perceived stop in speech transmission should continue.&lt;/b&gt;&lt;br /&gt;Set this higher if your voice breaks up when you speak (seen by a rapidly blinking voice icon next to your name).</source>
-        <translation type="unfinished">&lt;b&gt;选择在语音结束后多长时间内保持发送&lt;/b&gt;&lt;br /&gt;Set this higher if your voice breaks up when you speak (seen by a rapidly blinking voice icon next to your name).</translation>
+        <translation>&lt;b&gt;选择在语音结束后多长时间内保持发送&lt;/b&gt;&lt;br /&gt;如果在你说话的时候总是中断(你名字后面的图标颜色会很快的改变)，请把这里调高一点。</translation>
     </message>
     <message>
         <location/>
@@ -1053,7 +1053,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>B&amp;rowse...</source>
-        <translation>浏览(&amp;B)...</translation>
+        <translation>浏览(&amp;r)...</translation>
     </message>
     <message>
         <location/>
@@ -1063,37 +1063,37 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>&lt;b&gt;Preview&lt;/b&gt;&lt;br/&gt;Plays the current &lt;i&gt;on&lt;/i&gt; sound followed by the current &lt;i&gt;off&lt;/i&gt; sound.</source>
-        <translation>&lt;b&gt;试听&lt;/b&gt;&lt;br/&gt;连续播放当前 &lt;i&gt;打开&lt;/i&gt; 时的声音和当前&lt;i&gt;关闭&lt;/i&gt; 时的声音。</translation>
+        <translation>&lt;b&gt;试听&lt;/b&gt;&lt;br/&gt;连续播放当前设置的&lt;i&gt;开始&lt;/i&gt; 时和&lt;i&gt;结束&lt;/i&gt; 时的提示音。</translation>
     </message>
     <message>
         <location/>
         <source>Displays an always on top window with a push to talk button in it</source>
-        <translation>当按键说话时，显示一个总是置顶的窗口</translation>
+        <translation>当使用按键发言时，显示一个总是置顶的窗口</translation>
     </message>
     <message>
         <location/>
         <source>Display push to talk window</source>
-        <translation>显示按键说话窗口</translation>
+        <translation>显示按键发言窗口</translation>
     </message>
     <message>
         <location/>
         <source>Misc</source>
-        <translation type="unfinished"></translation>
+        <translation>提示</translation>
     </message>
     <message>
         <location/>
         <source>Audible audio cue when starting or stopping to transmit</source>
-        <translation type="unfinished">当开始或者结束的时候能听到的音频提示</translation>
+        <translation>当开始或者停止发送发言时你能听到一个简单的提示音</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This enables transmission audio cues.&lt;/b&gt;&lt;br /&gt;Setting this will give you a short audio beep when you start and stop transmitting.</source>
-        <translation>&lt;b&gt;开启发送声音的提示&lt;/b&gt;&lt;br /&gt;设置一个当你在开始发送和结束发送的时候的简短的提示音。</translation>
+        <translation>&lt;b&gt;开启发送声音的提示音&lt;/b&gt;&lt;br /&gt;设置一个当你在开始发送和结束发送的时候的简短的提示音。</translation>
     </message>
     <message>
         <location/>
         <source>Audio cue</source>
-        <translation>音频提示</translation>
+        <translation>提示音</translation>
     </message>
     <message>
         <location/>
@@ -1103,7 +1103,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Gets played when stopping to transmit</source>
-        <translation>当结束发送时播放</translation>
+        <translation>当停止发送时播放</translation>
     </message>
 </context>
 <context>
@@ -1111,7 +1111,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location filename="AudioConfigDialog.cpp" line="+71"/>
         <source>Continuous</source>
-        <translation type="unfinished">保持</translation>
+        <translation>保持</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1121,7 +1121,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location line="+1"/>
         <source>Push To Talk</source>
-        <translation type="unfinished">按键发言</translation>
+        <translation>按键发言</translation>
     </message>
     <message>
         <location line="+13"/>
@@ -1175,7 +1175,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location line="-42"/>
         <source>%1 min</source>
-        <translation type="unfinished">%1 分钟</translation>
+        <translation>%1 分钟</translation>
     </message>
 </context>
 <context>
@@ -1224,7 +1224,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Positional Audio</source>
-        <translation type="unfinished">位置音频</translation>
+        <translation>使用位置模拟</translation>
     </message>
     <message>
         <location/>
@@ -1234,17 +1234,17 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Default &amp;Jitter Buffer</source>
-        <translation type="unfinished">默认抖动缓冲(&amp;J)</translation>
+        <translation>默认抖动缓冲(&amp;J)</translation>
     </message>
     <message>
         <location/>
         <source>Safety margin for jitter buffer</source>
-        <translation type="unfinished">抖动缓冲的安全边界</translation>
+        <translation>抖动缓冲的安全边界</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This sets the minimum safety margin for the jitter buffer.&lt;/b&gt;&lt;br /&gt;All incoming audio is buffered, and the jitter buffer continually tries to push the buffer to the minimum sustainable by your network, so latency can be as low as possible. This sets the minimum buffer size to use. If the start of sentences you hear is very jittery, increase this value.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;设置抖动缓冲区的最小安全边界。&lt;/b&gt;&lt;br /&gt;所有传入的声音都会被缓冲，从网络接收到的所有声音都会先存储到这个抖动缓冲区，尽可能的减少这个空间的大小，以此尽量降低你的延迟。设置缓冲区的最小空间大小。如果你听到的声音抖动很大，请将这个值调高。</translation>
     </message>
     <message>
         <location/>
@@ -1279,7 +1279,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>&lt;b&gt;This adjusts the volume of incoming speech.&lt;/b&gt;&lt;br /&gt;Note that if you increase this beyond 100%, audio will be distorted.</source>
-        <translation>&lt;/b&gt;调整传入的语音音量&lt;/b&gt;&lt;br /&gt;注意如果你将这个这个值增加到超过100%，因平将会失真。</translation>
+        <translation>&lt;/b&gt;调整传入的语音音量&lt;/b&gt;&lt;br /&gt;注意如果你将这个这个值增加到超过100%，音频将会失真。</translation>
     </message>
     <message>
         <location/>
@@ -1300,22 +1300,22 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Factor for sound volume decrease</source>
-        <translation type="unfinished">品两减小因子</translation>
+        <translation>音量减小因子</translation>
     </message>
     <message>
         <location/>
         <source>Bloom</source>
-        <translation type="unfinished">增幅</translation>
+        <translation>增幅</translation>
     </message>
     <message>
         <location/>
         <source>Factor for sound volume increase</source>
-        <translation type="unfinished">音量增加因子</translation>
+        <translation>音量增加因子</translation>
     </message>
     <message>
         <location/>
         <source>How much should sound volume increase for sources that are really close?</source>
-        <translation type="unfinished">当当音源逐渐靠近时音量如何增加？</translation>
+        <translation>当音源逐渐靠近时音量如何增加？</translation>
     </message>
     <message>
         <location/>
@@ -1325,7 +1325,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>This sets the amount of data to pre-buffer in the output buffer. Experiment with different values and set it to the lowest which doesn&apos;t cause rapid jitter in the sound.</source>
-        <translation type="unfinished">设置输出缓冲的数据总量。当设置的较高时可以模拟不同的声音。</translation>
+        <translation>设置输出缓冲的数据总量。将这里调整到你听到的声音不会抖动的最小值。</translation>
     </message>
     <message>
         <location/>
@@ -1345,7 +1345,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Maximum distance, beyond which speech volume won&apos;t decrease</source>
-        <translation type="unfinished">最大距离，超过这个距离声音将不再减小</translation>
+        <translation>最大距离，超过这个距离声音将不再减小</translation>
     </message>
     <message>
         <location/>
@@ -1365,38 +1365,38 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Delay Variance</source>
-        <translation type="unfinished">延迟变量</translation>
+        <translation>延迟变量</translation>
     </message>
     <message>
         <location/>
         <source>Variance in packet latency</source>
-        <translation type="unfinished">数据包延迟的变量</translation>
+        <translation>数据包延迟的变量</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This sets the packet latency variance for loopback testing.&lt;/b&gt;&lt;br /&gt;Most audio paths contain some variable latency. This allows you to set that variance for loopback mode testing. For example, if you set this to 15ms, this will emulate a network with 20-35ms ping latency or one with 80-95ms latency. Most domestic net connections have a variance of about 5ms.</source>
         <oldsource>&lt;b&gt;This sets the packet latency variance for loopback testing.&lt;/b&gt;&lt;br /&gt;Most audio paths contain some variable latency. This allows you set that variance for loopback mode testing. For example, if you set this to 15ms, this will emulate a network with 20-35ms ping latency or one with 80-95ms latency. Most domestic net connections have a variance of about 5ms.</oldsource>
-        <translation type="unfinished">&lt;b&gt;设置回放测试的数据包延迟量。&lt;/b&gt;&lt;br /&gt;大多数的音频路径包含了延迟变量。这允许你为回放测试设置一个变量。例如，如果你将其设置为15ms，这模拟了ping值为 20-35ms或者延迟为80-95ms 的网络情况。通常一个网络的延迟变量在5ms。</translation>
+        <translation>&lt;b&gt;设置回放测试的数据包延迟量。&lt;/b&gt;&lt;br /&gt;大多数的音频路径包含了延迟变量。这允许你为回放测试设置一个变量。例如，如果你将其设置为15ms，这模拟了ping值为 20-35ms或者延迟为80-95ms 的网络情况。通常一个网络的延迟变量在5ms。</translation>
     </message>
     <message>
         <location/>
         <source>Packet Loss</source>
-        <translation type="unfinished">包丢失</translation>
+        <translation>丢包率</translation>
     </message>
     <message>
         <location/>
         <source>Packet loss for loopback mode</source>
-        <translation type="unfinished">回放模式的包丢失</translation>
+        <translation>回放模式的丢包率</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This sets the packet loss for loopback mode.&lt;/b&gt;&lt;br /&gt;This will be the ratio of packets lost. Unless your outgoing bandwidth is peaked or there&apos;s something wrong with your network connection, this will be 0%</source>
-        <translation>&lt;b&gt;设置回放模式的包丢失。&lt;/b&gt;&lt;br /&gt;设置包丢失的比率。除非你的带宽太小或者网络出现问题，否则应该是 0%</translation>
+        <translation>&lt;b&gt;设置回放模式的丢包率。&lt;/b&gt;&lt;br /&gt;设置包丢失的比率。除非你的带宽太小或者网络出现问题，否则应该是 0%</translation>
     </message>
     <message>
         <location/>
         <source>&amp;Loopback</source>
-        <translation type="unfinished">回放(&amp;L)</translation>
+        <translation>回放(&amp;L)</translation>
     </message>
     <message>
         <location/>
@@ -1406,27 +1406,27 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Attenuate applications by...</source>
-        <translation type="unfinished">减小程序声音...</translation>
+        <translation>减小程序声音...</translation>
     </message>
     <message>
         <location/>
         <source>Attenuation of other applications during speech</source>
-        <translation type="unfinished">当说话是减小其他应用程序的音量</translation>
+        <translation>当说话是减小其他应用程序的音量</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Attenuate volume of other applications during speech&lt;/b&gt;&lt;br /&gt;Mumble supports decreasing the volume of other applications during incoming and/or outgoing speech. This sets the attenuation of other applications if the feature is enabled.</source>
-        <translation type="unfinished">&lt;b&gt;当说话时减小其他应用程序的声音&lt;/b&gt;&lt;br /&gt;Mumble支持在传入或传出的时候减小其他应用程序的声音。如果支持的话，这个选项将减小其他应用程序的声音。</translation>
+        <translation>&lt;b&gt;当说话时减小其他应用程序的声音&lt;/b&gt;&lt;br /&gt;Mumble支持在有声音传入(或传出)的时候减小其他应用程序的声音。如果激活，这个选项将设置如何减小其他应用程序的声音。</translation>
     </message>
     <message>
         <location/>
         <source>If checked Mumble lowers the volume of other applications while other users talk</source>
-        <translation type="unfinished">如果选择该选项，当其他人说话时 Mumble 将降低其他应用程序的音量</translation>
+        <translation>如果选择该选项，当其他人说话时 Mumble 将降低其他应用程序的音量</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Attenuate applications while other users talk&lt;/b&gt;&lt;br /&gt;Mumble supports decreasing the volume of other applications during incoming and/or outgoing speech. This makes mumble activate the feature while other users talk to you.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;当其他人说话时降低应用程序音量&lt;/b&gt;&lt;br /&gt;Mumble支持当有发言传入或者传出时降低其他应用程序的音量。这个选项将使Mumble在其他用户对你说话时激活这个功能。</translation>
     </message>
     <message>
         <location/>
@@ -1436,12 +1436,12 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>If checked Mumble lowers the volume of other applications while you talk</source>
-        <translation type="unfinished">选择此项当你说话时 Mumble 将降低其他应用程序的音量</translation>
+        <translation>选择此项当你说话时 Mumble 将降低其他应用程序的音量</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Attenuate applications while you talk&lt;/b&gt;&lt;br /&gt;Mumble supports decreasing the volume of other applications during incoming and/or outgoing speech. This makes mumble activate the feature while you talk.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;当你说话时降低应用程序音量&lt;/b&gt;&lt;br /&gt;Mumble支持当有发言传入或者传出时降低其他应用程序的音量。这个选项将使Mumble在你说话时激活这个功能。</translation>
     </message>
     <message>
         <location/>
@@ -1451,7 +1451,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Exclusive mode, not recommended.</source>
-        <translation type="unfinished">独占模式，不推荐。</translation>
+        <translation>独占模式，不推荐。</translation>
     </message>
     <message>
         <location/>
@@ -1461,7 +1461,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Exclusive</source>
-        <translation type="unfinished">独占</translation>
+        <translation>独占</translation>
     </message>
 </context>
 <context>
@@ -1514,12 +1514,12 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location filename="AudioOutput.cpp" line="+297"/>
         <source>Choose sound file</source>
-        <translation type="unfinished">选择声音文件</translation>
+        <translation>选择声音文件</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Invalid sound file</source>
-        <translation>无效的声音文件</translation>
+        <translation>无效声音文件</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -1533,7 +1533,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
         <location filename="AudioStats.cpp" line="+384"/>
         <source>&gt;1000 ms</source>
         <oldsource>&gt;1000ms</oldsource>
-        <translation type="unfinished">&gt;1000 毫秒</translation>
+        <translation>&gt;1000 毫秒</translation>
     </message>
     <message>
         <location filename="AudioStats.ui"/>
@@ -1548,38 +1548,38 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Peak microphone level</source>
-        <translation type="unfinished">麦克风峰值</translation>
+        <translation>麦克风峰值</translation>
     </message>
     <message>
         <location/>
         <source>Peak power in last frame</source>
-        <translation type="unfinished">前一帧峰值</translation>
+        <translation>前一帧峰值</translation>
     </message>
     <message>
         <location/>
         <source>This shows the peak power in the last frame (20 ms), and is the same measurement as you would usually find displayed as &quot;input power&quot;. Please disregard this and look at &lt;b&gt;Microphone power&lt;/b&gt; instead, which is much more steady and disregards outliers.</source>
-        <translation type="unfinished">这里显示了麦克风最大功率在前一个帧(20ms)的峰值功率，这和你通常在“输入功率”里看到的信息使用同样的计量方式。请忽略这个选项并查看&lt;b&gt;麦克风功率&lt;/b&gt;，那将更稳定并且忽略了误差。</translation>
+        <translation>这里显示了麦克风最大功率在前一个帧(20ms)的峰值功率，这和你通常在“输入功率”里看到的信息使用同样的计量方式。请忽略这个选项并查看&lt;b&gt;麦克风功率&lt;/b&gt;，那将更稳定并且忽略了误差。</translation>
     </message>
     <message>
         <location/>
         <source>Peak speaker level</source>
-        <translation type="unfinished">扬声器峰值</translation>
+        <translation>扬声器峰值</translation>
     </message>
     <message>
         <location/>
         <source>This shows the peak power of the speakers in the last frame (20 ms). Unless you are using a multi-channel sampling method (such as ASIO) with speaker channels configured, this will be 0. If you have such a setup configured, and this still shows 0 while you&apos;re playing audio from other programs, your setup is not working.</source>
         <oldsource>This shows the peak power in the last frame (20 ms) of the speakers. Unless you are using a multi-channel sampling method (such as ASIO) with speaker channels configured, this will be 0. If you have such a setup configured, and this still shows 0 while you&apos;re playing audio from other programs, your setup is not working.</oldsource>
-        <translation type="unfinished">显示扬声器攻略在上一帧 (20ms) 的峰值。除非你通过扬声器频道设置使用了多声道抽样方式(比如ASIO)，否则这将会是0 。如果你进行了设置，而当你通过其他程序播放声音时这里依然显示为0，那么你的设置没有起作用。</translation>
+        <translation>显示扬声器攻略在上一帧 (20ms) 的峰值。除非你通过扬声器频道设置使用了多声道抽样方式(比如ASIO)，否则这将会是0 。如果你进行了设置，而当你通过其他程序播放声音时这里依然显示为0，那么你的设置没有起作用。</translation>
     </message>
     <message>
         <location/>
         <source>Peak clean level</source>
-        <translation type="unfinished"></translation>
+        <translation></translation>
     </message>
     <message>
         <location/>
         <source>This shows the peak power in the last frame (20 ms) after all processing. Ideally, this should be -96 dB when you&apos;re not talking. In reality, a sound studio should see -60 dB, and you should hopefully see somewhere around -20 dB. When you are talking, this should rise to somewhere between -5 and -10 dB.&lt;br /&gt;If you are using echo cancellation, and this rises to more than -15 dB when you&apos;re not talking, your setup is not working, and you&apos;ll annoy other users with echoes.</source>
-        <translation type="unfinished">这里显示了经过所有处理后上一帧(20ms)的峰值。在理想状态下，如果你没有说话，这里应该是-96dB。实际上，经过处理后通常会在 -60 dB 到 -20 dB 的附近。如果你正在说话，这将会上升到-5到-10dB的范围内。&lt;br /&gt;如果你使用了回音消除，当你没有说话时这将会升高超过 -15dB。如果你没有说话你的设置将不会起作用，而这些回声会让其他人感到厌烦。</translation>
+        <translation>这里显示了经过所有处理后上一帧(20ms)的峰值。在理想状态下，如果你没有说话，这里应该是-96dB。实际上，经过处理后通常会在 -60 dB 到 -20 dB 的附近。如果你正在说话，这将会上升到-5到-10dB的范围内。&lt;br /&gt;如果你使用了回音消除，当你没有说话时这将会升高超过 -15dB。如果你没有说话你的设置将不会起作用，而这些回声会让其他人感到厌烦。</translation>
     </message>
     <message>
         <location/>
@@ -1589,17 +1589,17 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Microphone power</source>
-        <translation type="unfinished">麦克风功率</translation>
+        <translation>麦克风功率</translation>
     </message>
     <message>
         <location/>
         <source>How close the current input level is to ideal</source>
-        <translation type="unfinished">输入等级是否理想</translation>
+        <translation>输入等级是否理想</translation>
     </message>
     <message>
         <location/>
         <source>This shows how close your current input volume is to the ideal. To adjust your microphone level, open whatever program you use to adjust the recording volume, and look at the value here while talking.&lt;br /&gt;&lt;b&gt;Talk loud, as you would when you&apos;re upset over getting fragged by a noob.&lt;/b&gt;&lt;br /&gt;Adjust the volume until this value is close to 100%, but make sure it doesn&apos;t go above. If it does go above, you are likely to get clipping in parts of your speech, which will degrade sound quality.</source>
-        <translation type="unfinished">这显示你当前的输入音量是否合适。请调节你的麦克风等级，随便打开一个你用于调整录音音量的软件，并在说话的时候查看这里的值。&lt;br /&gt;&lt;b&gt;大声的说话，如果你好像你正在聊天一样。&lt;/b&gt;&lt;br /&gt;调整音量，直到这个值接近但不超过 100% 。如果它超过了100%，你的说话将会被截断，这回降低通话质量。</translation>
+        <translation>这显示你当前的输入音量是否合适。请调节你的麦克风等级，随便打开一个你用于调整录音音量的软件，并在说话的时候查看这里的值。&lt;br /&gt;&lt;b&gt;大声的说话，如果你好像你正在聊天一样。&lt;/b&gt;&lt;br /&gt;调整音量，直到这个值接近但不超过 100% 。如果它超过了100%，你的说话将会被截断，这回降低通话质量。</translation>
     </message>
     <message>
         <location/>
@@ -1614,87 +1614,87 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>This is the Signal-To-Noise Ratio (SNR) of the microphone in the last frame (20 ms). It shows how much clearer the voice is compared to the noise.&lt;br /&gt;If this value is below 1.0, there&apos;s more noise than voice in the signal, and so quality is reduced.&lt;br /&gt;There is no upper limit to this value, but don&apos;t expect to see much above 40-50 without a sound studio.</source>
-        <translation type="unfinished">这里是麦克风在上一帧(20ms)的信噪比(SNR)。他显示了你的声音想对于噪音的清晰程度。&lt;br /&gt;如果这个值低于1.0，那说明你的信号里的噪音更大，质量也就会降低&lt;br /&gt;这个值没有上线，不过如果没有经过处理，这个值不过超过40～50。</translation>
+        <translation>这里是麦克风在上一帧(20ms)的信噪比(SNR)。他显示了你的声音想对于噪音的清晰程度。&lt;br /&gt;如果这个值低于1.0，那说明你的信号里的噪音更大，质量也就会降低&lt;br /&gt;这个值没有上线，不过如果没有经过处理，这个值不过超过40～50。</translation>
     </message>
     <message>
         <location/>
         <source>Speech Probability</source>
-        <translation type="unfinished">语音强度</translation>
+        <translation>语音强度</translation>
     </message>
     <message>
         <location/>
         <source>Probability of speech</source>
-        <translation type="unfinished">语音的强度</translation>
+        <translation>语音的强度</translation>
     </message>
     <message>
         <location/>
         <source>This is the probability that the last frame (20 ms) was speech and not environment noise.&lt;br /&gt;Voice activity transmission depends on this being right. The trick with this is that the middle of a sentence is always detected as speech; the problem is the pauses between words and the start of speech. It&apos;s hard to distinguish a sigh from a word starting with &apos;h&apos;.&lt;br /&gt;If this is in bold font, it means Mumble is currently transmitting (if you&apos;re connected).</source>
-        <translation type="unfinished"></translation>
+        <translation>在上一帧(20ms)里去除环境噪音后的语音强度。&lt;br /&gt;语音激活依赖这里的正确性。通常在发言的句子中间会检测会出现错误；通常发生在句子中间的停顿和开头的时候。最容易出错的地方是发音较轻的那些词。&lt;br /&gt;如果这里的字体是加粗的，那么Mumble正在发送 (如果连接到服务器)。</translation>
     </message>
     <message>
         <location/>
         <source>Configuration feedback</source>
-        <translation type="unfinished">回馈配置</translation>
+        <translation>配置回显</translation>
     </message>
     <message>
         <location/>
         <source>Current audio bitrate</source>
-        <translation type="unfinished">当前音频位速率</translation>
+        <translation>当前音频比特率</translation>
     </message>
     <message>
         <location/>
         <source>Bitrate of last frame</source>
-        <translation type="unfinished">上一帧位速率</translation>
+        <translation>上一帧比特率</translation>
     </message>
     <message>
         <location/>
         <source>DoublePush interval</source>
-        <translation type="unfinished">双击时间</translation>
+        <translation>双击时间</translation>
     </message>
     <message>
         <location/>
         <source>Time between last two Push-To-Talk presses</source>
-        <translation type="unfinished">两次按下按键发音的时间间隔</translation>
+        <translation>两次按下按键发言的时间间隔</translation>
     </message>
     <message>
         <location/>
         <source>Speech Detection</source>
-        <translation type="unfinished">语音检测</translation>
+        <translation>语音检测</translation>
     </message>
     <message>
         <location/>
         <source>Current speech detection chance</source>
-        <translation type="unfinished">当前的语音检测</translation>
+        <translation>当前的语音检测</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;This shows the current speech detection settings.&lt;/b&gt;&lt;br /&gt;You can change the settings from the Settings dialog or from the Audio Wizard.</source>
-        <translation type="unfinished">&lt;b&gt;显示当前的语音检测设置。&lt;/b&gt;&lt;br /&gt;你可以通过设置对话框或者音频向导修改这个设置。</translation>
+        <translation>&lt;b&gt;显示当前的语音检测设置。&lt;/b&gt;&lt;br /&gt;你可以通过设置对话框或者音频向导修改这个设置。</translation>
     </message>
     <message>
         <location/>
         <source>Signal and noise power spectrum</source>
-        <translation type="unfinished">信号和噪音强度频谱</translation>
+        <translation>信号和噪音强度频谱</translation>
     </message>
     <message>
         <location/>
         <source>Power spectrum of input signal and noise estimate</source>
-        <translation type="unfinished">输入的信号噪音的大致的频谱分布</translation>
+        <translation>输入的信号噪音的大致的频谱分布</translation>
     </message>
     <message>
         <location/>
         <source>This shows the power spectrum of the current input signal (red line) and the current noise estimate (filled blue).&lt;br /&gt;All amplitudes are multiplied by 30 to show the interesting parts (how much more signal than noise is present in each waveband).&lt;br /&gt;This is probably only of interest if you&apos;re trying to fine-tune noise conditions on your microphone. Under good conditions, there should be just a tiny flutter of blue at the bottom. If the blue is more than halfway up on the graph, you have a seriously noisy environment.</source>
-        <translation type="unfinished"></translation>
+        <translation>显示了当前输入的信号(红线)和噪音(蓝块)的能量频谱分析。&lt;br /&gt; 所有的振幅都将增加30以便查看(信号的频谱比噪音多出了多少)。&lt;br /&gt;也许你只有在试图减小你的麦克风噪音的时候才会对这里感兴趣。在好的条件下，蓝色区域只会占据底部很小的区域。如果蓝色区域占据了画面的一半以上区域，那说明你所处的环境噪音很大。</translation>
     </message>
     <message>
         <location/>
         <source>Echo Analysis</source>
-        <translation type="unfinished">回声分析</translation>
+        <translation>回声分析</translation>
     </message>
     <message>
         <location/>
         <source>Weights of the echo canceller</source>
-        <translation type="unfinished">回音消除的强度</translation>
+        <translation>回音消除的强度</translation>
     </message>
     <message>
         <location/>
@@ -1704,7 +1704,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>This is the audio bitrate of the last compressed frame (20 ms), and as such will jump up and down as the VBR adjusts the quality. The peak bitrate can be adjusted in the Settings dialog.</source>
-        <translation type="unfinished"></translation>
+        <translation>上一个音频压缩帧(20ms)的比特率，将随着质量调整的VBR而变化。比特率峰值可以在“设置”对话框里进行调整。</translation>
     </message>
 </context>
 <context>
@@ -1717,17 +1717,17 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Introduction</source>
-        <translation>简介</translation>
+        <translation type="unfinished">介绍</translation>
     </message>
     <message>
         <location/>
         <source>Welcome to the Mumble Audio Wizard</source>
-        <translation>欢迎来到 Mumble 音频设置向导</translation>
+        <translation type="unfinished">欢迎使用 Mumble 音频设置向导</translation>
     </message>
     <message>
         <location/>
         <source>Finished</source>
-        <translation>结束</translation>
+        <translation type="unfinished">完成</translation>
     </message>
     <message>
         <location/>
@@ -1737,7 +1737,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Device selection</source>
-        <translation>选择设备</translation>
+        <translation type="unfinished">设备选择</translation>
     </message>
     <message>
         <location/>
@@ -1747,7 +1747,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>This is the device your microphone is connected to.</source>
-        <translation>这个设备链接到你的麦克风。</translation>
+        <translation type="unfinished">这个设备连接到你的麦克风。</translation>
     </message>
     <message>
         <location/>
@@ -1792,12 +1792,12 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>This enables echo cancellation of outgoing audio, which helps both on speakers and on headsets.</source>
-        <translation>这讲开启输出音频的回声消除，这对耳机和扬声器都很有帮助。</translation>
+        <translation type="unfinished">这将开启输出音频的回声消除，这对耳机和扬声器都很有效。</translation>
     </message>
     <message>
         <location/>
         <source>This is the device your speakers or headphones are connected to.</source>
-        <translation>这个设备连接到你的扬声器或者耳麦。</translation>
+        <translation type="unfinished">这个设备连接到你的扬声器或者耳机。</translation>
     </message>
     <message>
         <location/>
@@ -1822,7 +1822,7 @@ Contains the list of members inherited by the current channel. Uncheck &lt;i&gt;
     <message>
         <location/>
         <source>Enable positional audio</source>
-        <translation>允许位置音频</translation>
+        <translation type="unfinished">允许位置模拟</translation>
     </message>
     <message>
         <location/>
@@ -1838,11 +1838,11 @@ This is the audio tuning wizard for Mumble. This will help you correctly set the
 &lt;p&gt;
 Please be aware that as long as this wizard is active, audio will be looped locally to allow you to listen to it, and no audio will be sent to the server.
 &lt;/p&gt;</source>
-        <translation>&lt;p&gt;
-这是 Mumble的音频设置向导。这将帮助你正确的设置你的声卡的输入等级和Mumble的声音处理的参数。
+        <translation type="unfinished">&lt;p&gt;
+欢迎使用 Mumble音频设置向导。这个向导将帮助你正确的设置你的声卡的输入等级和Mumble的声音处理的参数。
 &lt;/p&gt;
 &lt;p&gt;
-请注意在整个设置向导的过程中，音频将采用本地回放的方式以便你能听到，而且没有任何音频会被发送到服务器。
+注意：在使用该向导的过程中，Mumble将激活音频的本地回放的方式。这能方便你在调整的过程中能够听到效果，你所听到的和发出的任何声音都将不会被发送到服务器。
 &lt;/p&gt;</translation>
     </message>
     <message>
@@ -1870,21 +1870,21 @@ You should hear a voice sample. Change the slider below to the lowest value whic
 &lt;/p&gt;
 </source>
         <translation type="unfinished">&lt;p&gt;
-为了获得更好的效果，测试你的声卡的缓冲区大小非常重要。许多声卡宣称的他们所需要的缓冲区比他们实际上使用的要小的多，所以这是能唯一测试并设置你声卡的方法。
+为了有效的降低声音的延迟，设置声卡的缓冲区大小是非常重要的。许多声卡工作时实际需要的缓冲区比他们在说明书中所说的要大的多。因此设置缓冲区的唯一办法就是大量的实验。
 &lt;/p&gt;
 &lt;p&gt;
-你将会听到一个语音示例。拖动下面的进度条直到你听到声音 &lt;b&gt;没有&lt;/b&gt; 没有任何中断或者抖动。请注意在这个测试的过程中关闭本地的回音。
+你将会听到一个语音示例。拖动下面的滑杆，直到你听到的声音 &lt;b&gt;没有&lt;/b&gt; 没有任何中断或者抖动。注意：在这个测试的过程中请注意尽量避免你本地的回音影响。
 &lt;/p&gt;</translation>
     </message>
     <message>
         <location/>
         <source>Amount of data to buffer</source>
-        <translation type="unfinished">缓冲数据总量</translation>
+        <translation type="unfinished">缓冲区总量</translation>
     </message>
     <message>
         <location/>
         <source>This sets the amount of data to pre-buffer in the output buffer. Experiment with different values and set it to the lowest which doesn&apos;t cause rapid jitter in the sound.</source>
-        <translation type="unfinished">设置你输出缓冲的缓冲量大小。这能有效的清除声音中的抖动和中断，并使用各种不同的效果。</translation>
+        <translation type="unfinished">设置你输出缓冲区的总大小。尽可能的进行尝试并设置，在你听的的声音没有任何抖动或者中断的情况下选择尽可能的减小。</translation>
     </message>
     <message>
         <location/>
@@ -1896,16 +1896,16 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
 &lt;/p&gt;
 </source>
         <translation type="unfinished">&lt;p&gt;
-打开你的音量控制面板并切换到录音配置。确定麦克风已经激活并调整到最大音量。如果有一个可选9选项为 &quot;Microphone boost&quot; 请确保它被勾选。
+打开你的音量控制面板并切换到录音配置。确定麦克风已经激活并调整到最大音量。如果有选项 &quot;Microphone boost&quot; ，请确保将它选上。
 &lt;/p&gt;
 &lt;p&gt;
-大声的说话，就好像你正在和什么说话一样。调整音量控制面板里的音量控制直到你说话的时候下面的这个状态条保持在蓝色和绿色的区域里而&lt;b&gt;不是&lt;/b&gt; 红色的区域里。
+大声的咆哮，好像你非常兴奋或者愤怒。调整音量控制面板里的音量控制直到你说话的时候下面的这个进度保持在蓝色和绿色的区域里。千万&lt;b&gt;不要&lt;/b&gt; 跑到红色的区域里去。
 &lt;/p&gt;</translation>
     </message>
     <message>
         <location/>
         <source>Positional Audio</source>
-        <translation type="unfinished">位置音频</translation>
+        <translation type="unfinished">位置模拟</translation>
     </message>
     <message>
         <location/>
@@ -1922,10 +1922,10 @@ The graph below shows the position of &lt;font color=&quot;red&quot;&gt;you&lt;/
 &lt;/p&gt;
 </source>
         <translation type="unfinished">&lt;p&gt;
-Mumble为一些游戏提供了位置音频，并且通过位置语音来模拟其他用户在游戏里的位置。依赖他们的位置，语音的音量通过扬声器发出时会被改变。这依赖与你的扬声器和系统是否能够正确的表现。所以请在这里进行一下测试。
+Mumble为一些游戏提供了声音的位置模拟。这允许通过其他用户说话的声音来判断他们的角色在游戏里的位置。根据他们的位置不同，他们说话的音量从扬声器发出时会有所不同。而这一切都取决于你的系统和扬声器的设置是否正确，这里有一个简单的测试。
 &lt;/p&gt;
 &lt;p&gt;
-下面这张图显示了 The graph below shows the position of &lt;font color=&quot;red&quot;&gt;你&lt;/font&gt;、&lt;font color=&quot;yellow&quot;&gt;扬声器&lt;/font&gt; 和一个 &lt;font color=&quot;green&quot;&gt;移动的声音源&lt;/font&gt; 的位置的俯视图。你将会通过不同的声道听到声音的变化。
+下面的这张俯视图里标明了&lt;font color=&quot;red&quot;&gt;你&lt;/font&gt;、&lt;font color=&quot;yellow&quot;&gt;扬声器&lt;/font&gt; 和一个 &lt;font color=&quot;green&quot;&gt;移动的声音源&lt;/font&gt; 的位置。你将会通过的声道听到声音移动的效果。
 &lt;/p&gt;</translation>
     </message>
     <message>
@@ -1943,21 +1943,21 @@ Mumble is under continuous development, and the development team wants to focus 
 &lt;/p&gt;
 </source>
         <translation type="unfinished">&lt;p&gt;
-恭喜你，你现在可以通过 MUmble 获得更好的语音体验。
+恭喜你，现在 MUmble 可以为你提供更好的语音体验。
 &lt;/p&gt;
 &lt;p&gt;
-Mumble is under continuous development, and the development team wants to focus on the features that benefit the most users. To this end, Mumble supports submitting anonymous statistics about your configuration to the developers. These statistics are essential for future development, and also make sure the features you use aren&apos;t deprecated.
+Mumble 的开发是一个持续的过程，开发组一直在努力使它能够满足更多用户的需求。最后 Mumble提供了一个匿名的功能，你可以将你的配置情况和相关数据信息的统计发送给开发者。这些信息能够帮助开发者更好的改进Mumble，从而你能够在以后的版本中获得更好的体验。
 &lt;/p&gt;</translation>
     </message>
     <message>
         <location/>
         <source>Use headphones</source>
-        <translation>使用耳麦</translation>
+        <translation type="unfinished">使用使用耳机</translation>
     </message>
     <message>
         <location/>
         <source>This ignores the OS speaker configuration and configures the positioning for headphones instead.</source>
-        <translation type="unfinished">这将忽略系统扬声器的设置并且设置通过耳机表现位置。</translation>
+        <translation type="unfinished">这将忽略系统扬声器的配置并且配置通过耳机表现位置。</translation>
     </message>
     <message>
         <location/>
@@ -1967,12 +1967,12 @@ Mumble is under continuous development, and the development team wants to focus 
     <message>
         <location/>
         <source>Tuning microphone hardware volume to optimal settings.</source>
-        <translation type="unfinished">调整麦克风硬件音量至理想设置。</translation>
+        <translation type="unfinished">调整麦克风硬件音量到最佳的设置。</translation>
     </message>
     <message>
         <location/>
         <source>Now talk softly, as you would when talking late at night and you don&apos;t want to disturb anyone. Adjust the slider below so that the bar moves into green when you talk, but stays blue while you&apos;re silent.</source>
-        <translation type="unfinished">现在轻声的说话，好像你正在深夜说话而且你不想吵醒其他人。调整下面的进度条，当你说话的时候上其保持在绿色的区域而你没说话时保持在蓝色的区域。</translation>
+        <translation type="unfinished">现在小声的说话，好像是深夜而且你不想吵醒其他人。调整下面的滑杆，使当你说话的时候进度条保持在绿色的区域，而你没说话时停留在蓝色的区域。</translation>
     </message>
     <message>
         <location/>
@@ -2003,7 +2003,7 @@ Mumble is under continuous development, and the development team wants to focus 
         <location/>
         <source>Next you need to adjust the following slider. The first few utterances you say should end up in the green area (definitive speech). While talking, you should stay inside the yellow (might be speech) and when you&apos;re not talking, everything should be in the red (definitively not speech).</source>
         <oldsource>Next you need to adjust the following two sliders. The first few utterances you say should end up in the green area (definitive speech). While talking, you should stay inside the yellow (might be speech) and when you&apos;re not talking, everything should be in the red (definitively not speech).</oldsource>
-        <translation type="unfinished">接下来你需要调整下面的滑杆，首先你大声说话的时候应该保持在绿色的范围内(可靠的说话)。而你小声说话的时候应该保持在黄色的区域内(可能是在说话)；而当你没说话的时候应该保持在红色的区域内(确定没有说话)。</translation>
+        <translation type="unfinished">接下来你需要调整下面的滑杆，首先你大声说话的时候应该保持在绿色的范围内(可靠的说话)；而你小声说话的时候应该保持在黄色的区域内(可能是在说话)；而当你没说话的时候应该保持在红色的区域内(确定没有说话)。</translation>
     </message>
     <message>
         <location/>
@@ -2013,17 +2013,17 @@ Mumble is under continuous development, and the development team wants to focus 
     <message>
         <location/>
         <source>Changing hardware output delays to their minimum value.</source>
-        <translation type="unfinished">改变你硬件设备输出的最小单元。</translation>
+        <translation type="unfinished">将你硬件输出的延迟降到最低。</translation>
     </message>
     <message>
         <location/>
         <source>Submit anonymous statistics to the Mumble project</source>
-        <translation type="unfinished">提交匿名统计到 MUmble 项目组</translation>
+        <translation type="unfinished">提交匿名统计信息给 MUmble 项目组</translation>
     </message>
     <message>
         <location/>
         <source>Push To Talk:</source>
-        <translation type="unfinished">按键说话:</translation>
+        <translation type="unfinished">按键发言:</translation>
     </message>
     <message>
         <location/>
@@ -2118,12 +2118,12 @@ Mumble is under continuous development, and the development team wants to focus 
     <message>
         <location/>
         <source>Apply some high contrast optimizations for visually impaired users</source>
-        <translation type="unfinished">允许为视力障碍用户使用高亮优化的图像</translation>
+        <translation type="unfinished">允许为视力障碍用户使用高对比度的图像</translation>
     </message>
     <message>
         <location/>
         <source>Use high contrast graphics</source>
-        <translation type="unfinished">使用高对对比图像</translation>
+        <translation type="unfinished">使用高对比图像</translation>
     </message>
     <message>
         <location/>
@@ -2148,23 +2148,23 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
 </oldsource>
         <comment>For high contrast mode</comment>
         <translation type="unfinished">&lt;p&gt;
-打开你的音量控制面板并切换到录音配置。确定麦克风已经激活并调整到最大音量。如果有一个可选9选项为 &quot;Microphone boost&quot; 请确保它被勾选。
+打开你的音量控制面板并切换到录音配置。确定麦克风已经激活并调整到最大音量。如果有选项 &quot;Microphone boost&quot; ，请确保将它选上。
 &lt;/p&gt;
 &lt;p&gt;
-大声的说话，就好像你正在和什么说话一样。调整音量控制面板里的音量控制直到你说话的时候下面的这个状态条保持在蓝色和绿色的区域里而&lt;b&gt;不是&lt;/b&gt; 红色的区域里。
+大声的咆哮，好像你非常兴奋或者愤怒。调整音量控制面板里的音量控制直到你说话的时候下面的这个进度保持在蓝色和绿色的区域里。千万&lt;b&gt;不要&lt;/b&gt; 跑到红色的区域里去。
 &lt;/p&gt;</translation>
     </message>
     <message>
         <location/>
         <source>Now talk softly, as you would when talking late at night and you don&apos;t want to disturb anyone. Adjust the slider below so that the bar moves into empty zone when you talk, but stays in the striped one while you&apos;re silent.</source>
         <comment>For high contrast mode</comment>
-        <translation type="unfinished">现在轻声的说话，好像你正在深夜说话而且你不想吵醒其他人。调整下面的进度条，当你说话的时候上其保持在绿色的区域而你没说话时保持在蓝色的区域。</translation>
+        <translation type="unfinished">现在小声的说话，好像是深夜而且你不想吵醒其他人。调整下面的滑杆，使当你说话的时候进度条保持在绿色的区域，而你没说话时停留在蓝色的区域。</translation>
     </message>
     <message>
         <location/>
         <source>Next you need to adjust the following slider. The first few utterances you say should end up in the empty area (definitive speech). While talking, you should stay inside the striped (might be speech) and when you&apos;re not talking, everything should be in the crisscrossed (definitively not speech).</source>
         <comment>For high contrast mode</comment>
-        <translation type="unfinished">接下来你需要调整下面的滑杆，首先你大声说话的时候应该保持在绿色的范围内(可靠的说话)。而你小声说话的时候应该保持在黄色的区域内(可能是在说话)；而当你没说话的时候应该保持在红色的区域内(确定没有说话)。</translation>
+        <translation type="unfinished">接下来你需要调整下面的滑杆，首先你大声说话的时候应该保持在绿色的范围内(可靠的说话)；而你小声说话的时候应该保持在黄色的区域内(可能是在说话)；而当你没说话的时候应该保持在红色的区域内(确定没有说话)。</translation>
     </message>
 </context>
 <context>
@@ -2230,32 +2230,32 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     <message>
         <location filename="Cert.cpp" line="+50"/>
         <source>Name</source>
-        <translation type="unfinished">姓名</translation>
+        <translation>姓名</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Email</source>
-        <translation type="unfinished"></translation>
+        <translation>Email</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Issuer</source>
-        <translation type="unfinished">颁发者</translation>
+        <translation>颁发者</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>Expiry Date</source>
-        <translation type="unfinished">失效日期</translation>
+        <translation>失效日期</translation>
     </message>
     <message>
         <location line="+34"/>
         <source>(none)</source>
-        <translation type="unfinished"></translation>
+        <translation>(无)</translation>
     </message>
     <message>
         <location line="+11"/>
         <source>Self-signed</source>
-        <translation type="unfinished">自签名</translation>
+        <translation>自签名</translation>
     </message>
 </context>
 <context>
@@ -2283,7 +2283,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     <message>
         <location line="+5"/>
         <source>The file could not be opened for writing. Please use another file.</source>
-        <translation>文件无法打开并写入。请选择其他文件。</translation>
+        <translation type="unfinished">文件无法写入。请选择其他文件。</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2293,7 +2293,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     <message>
         <location line="+7"/>
         <source>The file could not be opened for reading. Please use another file.</source>
-        <translation>文件无法打开或读取。选择其他文件。</translation>
+        <translation type="unfinished">文件无法读取。选择其他文件。</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -2303,7 +2303,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     <message>
         <location line="+5"/>
         <source>The file did not contain a valid certificate and key. Please use another file.</source>
-        <translation>该文件未包含有效的证书和密钥，请选择其他文件。</translation>
+        <translation type="unfinished">文件不包含有效的证书和密钥，请选择其他文件。</translation>
     </message>
     <message>
         <location line="+22"/>
@@ -2313,7 +2313,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     <message>
         <location line="+37"/>
         <source>Select file to import certificate from</source>
-        <translation>选择要导入到证书窗口的文件</translation>
+        <translation type="unfinished">选择需要导入的证书的文件</translation>
     </message>
     <message>
         <location line="+57"/>
@@ -2323,12 +2323,12 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     <message>
         <location line="+43"/>
         <source>Mumble User</source>
-        <translation>Mumble 用户</translation>
+        <translation type="unfinished">Mumble User</translation>
     </message>
     <message>
         <location filename="main.cpp" line="+405"/>
         <source>&lt;b&gt;Certificate Expiry:&lt;/b&gt; Your certificate is about to expire. You need to renew it, or you will no longer be able to connect to servers you are registered on.</source>
-        <translation>&lt;b&gt;证书到期：&lt;/b&gt; 你的证书已经到期。你需要重新生成一个新的证书，否则将无法连接到服务器。</translation>
+        <translation type="unfinished">&lt;b&gt;证书到期：&lt;/b&gt; 你的证书已经到期。你需要重新生成一个新的证书，否则将无法连接到服务器已经注册的服务器。</translation>
     </message>
 </context>
 <context>
@@ -2341,12 +2341,12 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     <message>
         <location/>
         <source>Certificate Authentication</source>
-        <translation>证书验证</translation>
+        <translation type="unfinished">证书认证</translation>
     </message>
     <message>
         <location/>
         <source>Authenticating to servers without using passwords</source>
-        <translation>不使用密码向服务器进行认证</translation>
+        <translation type="unfinished">不使用密码通过服务器的认证</translation>
     </message>
     <message>
         <location/>
@@ -2366,7 +2366,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     <message>
         <location/>
         <source>Create a new certificate</source>
-        <translation>创建新证书</translation>
+        <translation type="unfinished">创建一个新的证书</translation>
     </message>
     <message>
         <location/>
@@ -2417,7 +2417,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
         <location/>
         <source>&lt;p&gt;Mumble can import certificates stored in PKCS #12 format. This is the format used when exporting a key from Mumble, and also when exporting keys from Firefox, Internet Explorer, Opera etc.&lt;/p&gt;&lt;p&gt;If the file is password protected, you will need the password to import the certificate.&lt;/p&gt;</source>
         <oldsource>&lt;p&gt;Mumble can import certificates stored in PKCS #12 format. This is the format used when exporting a key from Mumble, and also when exporting keys from FireFox, Internet Explorer, Opera etc.&lt;/p&gt;&lt;p&gt;If the file is password protected, you will need the password to import the certificate.&lt;/p&gt;</oldsource>
-        <translation>&lt;p&gt;Mumble可以导入一个被存储为 PKCS #2 格式的证书。这个格式的证书不仅可以由Mumble导入，而且也可以由 Firefox, Internet Explorer, Opera 等浏览器导出。&lt;/p&gt;&lt;p&gt;如果文件是被密码保护的，你需要输入密码才能导入证书。&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;Mumble可以导入一个被存储为 PKCS #2 格式的证书。这个格式的证书不仅可以由Mumble导出，而且也可以由 Firefox, Internet Explorer, Opera 等浏览器导出。&lt;/p&gt;&lt;p&gt;如果文件是被密码保护的，你需要输入密码才能导入证书。&lt;/p&gt;</translation>
     </message>
     <message>
         <location/>
@@ -2427,7 +2427,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     <message>
         <location/>
         <source>Filename to import from</source>
-        <translation>导入证书的文件名</translation>
+        <translation type="unfinished">需要导入的证书的文件名</translation>
     </message>
     <message>
         <location/>
@@ -2442,7 +2442,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     <message>
         <location/>
         <source>This opens a file selection dialog to choose a file to import a certificate from.</source>
-        <translation>打开一个对话框以选择需要导入的证书。</translation>
+        <translation type="unfinished">打开一个文件选择对话框以选择需要导入的证书的文件。</translation>
     </message>
     <message>
         <location/>
@@ -2487,7 +2487,7 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
     <message>
         <location/>
         <source>Replace existing certificate with new certificate?</source>
-        <translation>用新的证书替换已存在的证书。</translation>
+        <translation type="unfinished">是否用新的证书替换已存在的证书？</translation>
     </message>
     <message>
         <location/>
@@ -2500,10 +2500,10 @@ Speak loudly, as when you are annoyed or excited. Decrease the volume in the sou
 Are you sure you wish to replace your certificate?
 &lt;/p&gt;
 </source>
-        <translation type="unfinished">&lt;p&gt;你已经在Mumble中保存了一个证书，并且你现在将要替换它。&lt;/p&gt;
-&lt;p&gt;如果你通过一个可信任CA升级了你的证书认证并且证书的使用的email符合你当前的证书，这是完全安全的，而且你连接到的服务器会自动根据你的email地址识别这个强证书。
+        <translation type="unfinished">&lt;p&gt;你已经在Mumble中保存了一个证书，而你现在将要替换它。&lt;/p&gt;
+&lt;p&gt;如果你正在升级你的CA颁发给你的证书，并且这个证书所使用的邮箱和你现在的证书是相同的，这是完全安全的。你连接到的服务器会自动根据你的email地址识别这个强证书。
 &lt;/p&gt;
-&lt;p&gt;如果情况不是这样的，你将不会不会被所有你已经通过认证的服务器认可。如果你还没有在任何服务器注册，那将没有任何影响。
+&lt;p&gt;如果情况不是这样的，你已经注册的服务器将无法验证你的身份。如果你还没有在任何服务器注册，那将没有任何影响。
 &lt;/p&gt;
 &lt;p&gt;
 确定要替换证书？
@@ -2533,7 +2533,7 @@ Are you sure you wish to replace your certificate?
     <message>
         <location/>
         <source>Make a backup of your certificate</source>
-        <translation>创建证书的备份</translation>
+        <translation type="unfinished">为你的证书创建一个备份</translation>
     </message>
     <message>
         <location/>
@@ -2558,17 +2558,17 @@ Are you sure you wish to replace your certificate?
     <message>
         <location/>
         <source>This is the certificate Mumble currently uses. It will be exported.</source>
-        <translation>这是你当前正在使用的证书。他将被导出。</translation>
+        <translation type="unfinished">这是 Mumble 当前正在使用的证书。他将被导出。</translation>
     </message>
     <message>
         <location/>
         <source>Generate a new certificate for strong authentication</source>
-        <translation>生成一个强认证的证书</translation>
+        <translation type="unfinished">生成一个新的强认证的证书</translation>
     </message>
     <message>
         <location/>
         <source>&lt;p&gt;Mumble will now generate a strong certificate for authentication to servers.&lt;/p&gt;&lt;p&gt;If you wish, you may provide some additional information to be stored in the certificate, which will be presented to servers when you connect. If you provide a valid email address, you can upgrade to a CA issued email certificate later on, which provides strong identification.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;Mumble 现在将生成一个到服务器的强认证证书。&lt;/p&gt;&lt;p&gt;如果你希望这样做，你需要在证书里添加一些信息，这些信息将帮助服务器对你的连接进行认证。如果你拥有一个有效的 email 地址，你可以向一个CA认证机构申请一个强认证的证书。&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;Mumble 现在将生成一个强认证的证书，并向服务器认证。&lt;/p&gt;&lt;p&gt;如果你希望这样做，你需要为你的证书添加一些信息，这些信息会保存在证书里。服务器将会通过这些信息对你的连接进行认证。如果你拥有一个有效的 email 地址，稍后你可以向一个CA申请对你证书进行认证升级。&lt;/p&gt;</translation>
     </message>
     <message>
         <location/>
@@ -2588,7 +2588,7 @@ Are you sure you wish to replace your certificate?
     <message>
         <location/>
         <source>This is your email address. It is strongly recommended to provide a valid email address, as this will allow you to upgrade to a strong certificate without authentication problems.</source>
-        <translation>你的 email 地址。强烈推荐使用有效的邮件地址，否则肯能会在申请强认证的时候遇到问题。</translation>
+        <translation type="unfinished">你的 email 地址。强烈推荐使用有效的邮件地址，否则肯能会在申请升级为强认证的时候遇到问题。</translation>
     </message>
     <message>
         <location/>
@@ -2603,17 +2603,17 @@ Are you sure you wish to replace your certificate?
     <message>
         <location/>
         <source>Finish</source>
-        <translation>结束</translation>
+        <translation type="unfinished">完成</translation>
     </message>
     <message>
         <location/>
         <source>Certificate-based authentication is ready for use</source>
-        <translation type="unfinished">证书——准备使用基本认证</translation>
+        <translation type="unfinished">证书——基本认证可以使用</translation>
     </message>
     <message>
         <location/>
         <source>Enjoy using Mumble with strong authentication.</source>
-        <translation>以强认证方式使用 Mumble.</translation>
+        <translation type="unfinished">将以强认证方式使用 Mumble.</translation>
     </message>
     <message>
         <location/>
@@ -2627,9 +2627,9 @@ Are you sure you wish to replace your certificate?
 It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://mumble.info/certificate.php&quot;&gt;create a trusted certificate&lt;/a&gt;.
 &lt;/p&gt;
 </source>
-        <translation type="unfinished">&lt;p&gt;Mumble 允许你使用证书想服务器认证。使用证书可以避免输入密码，这意味着你不需要远程输入任何密码。这也可以提供一种快捷的注册方式。&lt;/p&gt;&lt;p&gt; Mumble可以在没有证书的情况下使用，但是有时服务器会要求你拥有一个证书。&lt;/p&gt;
+        <translation type="unfinished">&lt;p&gt;Mumble 允许你使用证书向服务器验证身份。使用证书可以避免输入密码，也就是说你不需要再输入任何密码。这对于用户的注册也非常方便。&lt;/p&gt;&lt;p&gt; Mumble可以在没有证书的情况下使用，但是有些服务器会要求你必须拥有一个证书。&lt;/p&gt;
 &lt;p&gt;
-&lt;b&gt;强烈&lt;/b&gt; 向你推荐&lt;a href=&quot;http://mumble.info/certificate.php&quot;&gt;create a trusted certificate&lt;/a&gt;.
+&lt;b&gt;强烈&lt;/b&gt; 推荐你&lt;a href=&quot;http://mumble.info/certificate.php&quot;&gt;创建一个可信证书&lt;/a&gt;.
 &lt;/p&gt;
 </translation>
     </message>
@@ -2637,8 +2637,8 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
         <location/>
         <source>&lt;p&gt;If you ever lose your current certificate, which will happen if your computer suffers a hardware failure or you reinstall your machine, you will no longer be able to authenticate to any server you are registered on. It is therefore &lt;b&gt;mandatory&lt;/b&gt; that you make a backup of your certificate. We strongly recommend you store this backup on removable storage, such as a USB flash drive.&lt;/p&gt;
 &lt;p&gt;Note that this file will not be encrypted, and if anyone gains access to it, they will be able to impersonate you, so take good care of it.&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;如果你丢失了当前的证书，这通常会在你的电脑硬件故障或者你装新安装了操作系统时发生，你将无法被你已经注册过的服务器认证。这是&lt;b&gt;强制性的&lt;/b&gt; 。你可以制作一个证书的备份。我们强烈建议你将备份存储到可以动设备中，例如U盘。&lt;/p&gt;
-&lt;p&gt;注意：这个文件不是加密的，如果其他人获得其中的内容，他们将可以冒充你，所以请小心保管。&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;如果你弄丢了现在的证书，这通常会在你的电脑硬件故障或者你装新安装了操作系统时发生，你将无法向你已经注册过的服务器验证身份。这是&lt;b&gt;强制性的&lt;/b&gt; 。你可以制作一个证书的备份。我们强烈建议你将备份存储到可以动设备中，例如U盘。&lt;/p&gt;
+&lt;p&gt;注意：这个文件的内容不是加密的，如果其他人获得其中的内容，他们将可以冒充你。请小心保管。&lt;/p&gt;</translation>
     </message>
 </context>
 <context>
@@ -2691,7 +2691,7 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
     <message>
         <location line="+2"/>
         <source>This represents total access to the channel, including the ability to change group and ACL information. This privilege implies all other privileges.</source>
-        <translation>允许对频道拥有完全控制，包括改变分组和ACL信息。这个权限包含了所有其他权限。</translation>
+        <translation type="unfinished">允许对频道完全进行控制，包括改变分组和ACL信息。这个权限包含了所有其他权限。</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -2721,7 +2721,7 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
     <message>
         <location line="+3"/>
         <source>This represents the permission to move a user to another channel or kick him from the server. To actually move the user, either the moving user must have Move privileges in the destination channel, or the user must normally be allowed to enter the channel. Users with this privilege can move users into channels the target user normally wouldn&apos;t have permission to enter.</source>
-        <translation>允许将一个用户移动到一个频道或者踢出服务器。对于移动操作，同时需要移动者拥有目标频道移动权限或者被移动者具有进入目标频道的权限。拥有这个权限的用户可以将没有进入某个频道的权限的用户移动到该频道。</translation>
+        <translation type="unfinished">允许将一个用户移动到另一个频道或者踢出服务器。对于移动操作，同时需要移动者拥有目标频道移动权限或者被移动者具有进入目标频道的权限。拥有这个权限的用户可以将没有进入某个频道的权限的用户移动到该频道。</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -2852,7 +2852,7 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
     <message>
         <location line="+2"/>
         <source>Local Mute</source>
-        <translation type="unfinished">本地关闭麦克风</translation>
+        <translation type="unfinished">关闭本地麦克风</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -3036,7 +3036,7 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
     <message>
         <location line="+3"/>
         <source>Packet loss</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">丢包率</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -3138,7 +3138,7 @@ It is &lt;b&gt;strongly&lt;/b&gt; recommended that you &lt;a href=&quot;http://m
     <message>
         <location/>
         <source>&amp;Paste</source>
-        <translation>站提(&amp;P)</translation>
+        <translation type="unfinished">粘贴(&amp;P)</translation>
     </message>
     <message>
         <location/>
@@ -3424,7 +3424,7 @@ of the possible locations.</source>
         <location line="+7"/>
         <source>The database &apos;%1&apos; is read-only. Mumble cannot store server settings (i.e. SSL certificates) until you fix this problem.</source>
         <oldsource>The database &apos;%1&apos; is read-only. Mumble can not store server settings (ie. SSL certificates) until you fix this problem.</oldsource>
-        <translation>数据库‘%1&apos;’ 是只读的。在修复错误前Mumble 无将法保存服务器设置（i.e. SLL certificates）。</translation>
+        <translation type="unfinished">数据库‘%1’是只读的。错误被修复之前，Mumble 将无法保存服务器设置（i.e. SSL certificates）。</translation>
     </message>
 </context>
 <context>
@@ -3432,7 +3432,7 @@ of the possible locations.</source>
     <message>
         <location filename="CustomElements.cpp" line="+180"/>
         <source>Drag here</source>
-        <translation>拖放到此处</translation>
+        <translation type="unfinished">拖动这里</translation>
     </message>
 </context>
 <context>
@@ -3508,23 +3508,23 @@ of the possible locations.</source>
     <message>
         <location line="+38"/>
         <source>Shortcut button combination.</source>
-        <translation type="unfinished">绑定快捷键。</translation>
+        <translation>绑定快捷键。</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&lt;b&gt;This is the global shortcut key combination.&lt;/b&gt;&lt;br /&gt;Click this field and then press the desired key/button combo to rebind. Double-click to clear.</source>
         <oldsource>&lt;b&gt;This is the global shortcut key combination.&lt;/b&gt;&lt;br /&gt;Double-click this field and then the desired key/button combo to rebind.</oldsource>
-        <translation type="unfinished">&lt;b&gt;绑定全局快捷键。&lt;/b&gt;&lt;br /&gt;单击这个区域然后按下相应的 Key/button 组合以重新绑定快捷键，双击清除已绑定的快捷键。</translation>
+        <translation>&lt;b&gt;绑定全局快捷键。&lt;/b&gt;&lt;br /&gt;单击这个区域然后按下相应的 Key/button 组合以重新绑定快捷键，双击清除已绑定的快捷键。</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Suppress keys from other applications</source>
-        <translation type="unfinished">抑制其他应用程序的键</translation>
+        <translation>抑制其他应用程序的键</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>&lt;b&gt;This hides the button presses from other applications.&lt;/b&gt;&lt;br /&gt;Enabling this will hide the button (or the last button of a multi-button combo) from other applications. Note that not all buttons can be suppressed.</source>
-        <translation type="unfinished"></translation>
+        <translation>&lt;b&gt;将这个键从其他应用程序屏蔽。&lt;/b&gt;&lt;br /&gt;打开这个选项将会阻止其他应用程序使用这个键(或者最后一个键或者多个键的组合)。注意：不是所有的键都能被阻止。</translation>
     </message>
 </context>
 <context>
@@ -3537,12 +3537,12 @@ of the possible locations.</source>
     <message>
         <location/>
         <source>Whisper to list of Users</source>
-        <translation>对列表的用户说悄悄话</translation>
+        <translation type="unfinished">对名单中的用户说悄悄话</translation>
     </message>
     <message>
         <location/>
         <source>Channel Target</source>
-        <translation>改变目标</translation>
+        <translation type="unfinished">目标频道</translation>
     </message>
     <message>
         <location/>
@@ -3582,32 +3582,32 @@ of the possible locations.</source>
     <message>
         <location/>
         <source>Ignore positional audio</source>
-        <translation>忽视位置语音</translation>
+        <translation type="unfinished">忽视位置模拟</translation>
     </message>
     <message>
         <location/>
         <source>Shout to Linked channels</source>
-        <translation>对链接的频道大喊</translation>
+        <translation type="unfinished">对链接的频道咆哮</translation>
     </message>
     <message>
         <location/>
         <source>Shout to subchannels</source>
-        <translation>对所有的子频道大喊</translation>
+        <translation type="unfinished">对子频道咆哮</translation>
     </message>
     <message>
         <location/>
         <source>Shout to Channel</source>
-        <translation>对频道大喊</translation>
+        <translation type="unfinished">对频道咆哮</translation>
     </message>
     <message>
         <location/>
         <source>The whisper will also be transmitted to linked channels.</source>
-        <translation>悄悄话可以发送到所有链接的频道。</translation>
+        <translation type="unfinished">悄悄话也可以发送到所有链接的频道。</translation>
     </message>
     <message>
         <location/>
         <source>The whisper will also be sent to the subchannels of the channel target.</source>
-        <translation>悄悄话可以发送到目标频道的所有子频道。</translation>
+        <translation type="unfinished">悄悄话可以也发送到目标频道的所有子频道。</translation>
     </message>
 </context>
 <context>
@@ -3857,17 +3857,17 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="-539"/>
         <source>Toggle console for %1 events</source>
-        <translation>将事件 %1 关联到控制台</translation>
+        <translation type="unfinished">显示事件 %1 </translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Toggle pop-up notifications for %1 events</source>
-        <translation>将事件 %1 关联到弹出通知</translation>
+        <translation type="unfinished">为事件 %1 弹出通知</translation>
     </message>
     <message>
         <location line="+1"/>
         <source>Toggle Text-To-Speech for %1 events</source>
-        <translation>将事件 %1 关联到语音播报</translation>
+        <translation type="unfinished">语音播报事件 %1 </translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3882,7 +3882,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+2"/>
         <source>Click here to toggle console output for %1 events.&lt;br /&gt;If checked, this option makes Mumble output all %1 events in its message log.</source>
-        <translation>点击这里为事件 %1 设置控制输出。&lt;br /&gt;如果选择这个选项，Mumble将输出所有事件 %1 到信息日志。</translation>
+        <translation type="unfinished">点击这里为事件 %1 设置显示输出。&lt;br /&gt;如果选择这个选项，Mumble将输出所有事件 %1 到信息记录。</translation>
     </message>
     <message>
         <location line="+1"/>
@@ -3910,17 +3910,17 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location filename="Log.ui"/>
         <source>Messages</source>
-        <translation>消息</translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location/>
         <source>Message</source>
-        <translation>消息</translation>
+        <translation type="unfinished">信息</translation>
     </message>
     <message>
         <location/>
         <source>Console</source>
-        <translation>控制台</translation>
+        <translation type="unfinished">显示</translation>
     </message>
     <message>
         <location/>
@@ -4170,7 +4170,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location/>
         <source>Style</source>
-        <translation>央视</translation>
+        <translation type="unfinished">样式</translation>
     </message>
     <message>
         <location/>
@@ -4255,17 +4255,17 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location/>
         <source>Always</source>
-        <translation>总是</translation>
+        <translation type="unfinished">始终</translation>
     </message>
     <message>
         <location/>
         <source>In minimal view</source>
-        <translation>简洁视图时</translation>
+        <translation type="unfinished">迷你</translation>
     </message>
     <message>
         <location/>
         <source>In normal view</source>
-        <translation>普通视图时</translation>
+        <translation type="unfinished">普通</translation>
     </message>
     <message>
         <location/>
@@ -4280,7 +4280,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location/>
         <source>This setting controls in which situations the application will stay always on top. If you select &lt;i&gt;Never&lt;/i&gt; the application will not stay on top. &lt;i&gt;Always&lt;/i&gt; will always keep the application on top. &lt;i&gt;In minimal view&lt;/i&gt; / &lt;i&gt;In normal view&lt;/i&gt; will only keep the application always on top when minimal view is activated / deactivated.</source>
-        <translation type="unfinished">设置是否始终将应用程序至于顶层。如果选择 &lt;i&gt;从不&lt;/i&gt; ，应用程序将永远不会至于顶层。 &lt;i&gt;总是&lt;/i&gt; 将使应用程序总是显示在顶层。&lt;i&gt;简洁视图时&lt;/i&gt; / &lt;i&gt;普通视图时&lt;/i&gt; 将仅在激活/未激活简洁视图的时候将应用程序置于顶层。</translation>
+        <translation type="unfinished">设置是否始终将应用程序至于顶层。如果选择 &lt;i&gt;从不&lt;/i&gt; ，应用程序将永远不会至于顶层。 &lt;i&gt;总是&lt;/i&gt; 将使应用程序总是显示在顶层。&lt;i&gt;迷你&lt;/i&gt; / &lt;i&gt;普通&lt;/i&gt; 将仅在激活/未激活迷你模式的时候将应用程序置于顶层。</translation>
     </message>
     <message>
         <location/>
@@ -4295,7 +4295,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location/>
         <source>Optimize for high contrast</source>
-        <translation>高亮显示优化</translation>
+        <translation type="unfinished">高对比度优化</translation>
     </message>
     <message>
         <location/>
@@ -4571,7 +4571,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+5"/>
         <source>&lt;p&gt;No build information or OS version available.&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;p&gt;没有构建信息或操作系统版本不可用。&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4581,7 +4581,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+20"/>
         <source>&lt;h2&gt;Voice channel&lt;/h2&gt;&lt;p&gt;Encrypted with 128 bit OCB-AES128&lt;br /&gt;%1 ms average latency (%4 deviation)&lt;/p&gt;</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">&lt;h2&gt;语音频道&lt;/h2&gt;&lt;p&gt;用 128 bit OCB-AES128 加密&lt;br /&gt; 平均延时 %1 毫秒(误差 %4 )&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+11"/>
@@ -4598,7 +4598,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location line="-329"/>
         <location line="+329"/>
         <source>&lt;p&gt;You are about to register yourself on this server. This action cannot be undone, and your username cannot be changed once this is done. You will forever be known as &apos;%1&apos; on this server.&lt;/p&gt;&lt;p&gt;Are you sure you want to register yourself?&lt;/p&gt;</source>
-        <translation type="unfinished">&lt;p&gt;你将在这个服务器上注册你自己。这个操作不可被撤销，一旦注册你的用户名将不可再次修改。你将一直使用 &apos;%1&apos; 做为你在这个服务器上的名字。&lt;/p&gt;&lt;p&gt;你确定要注册？&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;你将在这个服务器上注册。这个操作一旦执行将无法撤销，你的用户名注册后将无法修改。你将一直使用 &apos;%1&apos; 做为你在这个服务器上的名字。&lt;/p&gt;&lt;p&gt;确定注册到这个服务器？&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4608,7 +4608,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+0"/>
         <source>&lt;p&gt;You are about to register %1 on the server. This action cannot be undone, the username cannot be changed, and as a registered user, %1 will have access to the server even if you change the server password.&lt;/p&gt;&lt;p&gt;From this point on, %1 will be authenticated with the certificate currently in use.&lt;/p&gt;&lt;p&gt;Are you sure you want to register %1?&lt;/p&gt;</source>
-        <translation>&lt;p&gt;你将注册 %1 在这个服务器上。这个操作无法被测小，而且这个用户名一旦注册将无法被改变， %1 将一直作为你的用户名，即使你修改服务器密码。&lt;/p&gt;&lt;p&gt;基于这一点，需要认证%1是否正在被使用。&lt;/p&gt;&lt;p&gt;确定注册为 %1 ？&lt;/p&gt;</translation>
+        <translation type="unfinished">&lt;p&gt;你正准备注册 %1 到这个服务器上。这个操作一旦确定将无法撤销，而且用户名一旦注册将无法被改变。作为一个注册用户， %1 将一直拥有服务器的访问权限，即使你修改服务器密码。&lt;/p&gt;&lt;p&gt;基于这一点，需要认证%1是否拥有一个证书。&lt;/p&gt;&lt;p&gt;确定将 %1 注册到服务器？&lt;/p&gt;</translation>
     </message>
     <message>
         <location line="+40"/>
@@ -4629,7 +4629,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location line="+52"/>
         <location line="+237"/>
         <source>Message to channel %1</source>
-        <translation>发送消息到频道 %1</translation>
+        <translation type="unfinished">发送信息到频道 %1</translation>
     </message>
     <message>
         <location line="+525"/>
@@ -4672,7 +4672,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="-17"/>
         <source>Could not open file for reading.</source>
-        <translation>无法打开并读取文件。</translation>
+        <translation type="unfinished">无法读取文件。</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -4785,7 +4785,7 @@ This field describes the size of an LCD device. The size is given either in pixe
         <location line="-318"/>
         <location line="+85"/>
         <source>Message to %1</source>
-        <translation>发送消息给 %1</translation>
+        <translation type="unfinished">发送信息给 %1</translation>
     </message>
     <message>
         <location line="-40"/>
@@ -4800,7 +4800,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+71"/>
         <source>Sending message to channel %1</source>
-        <translation>发送信息到频道%1</translation>
+        <translation type="unfinished">正在发送信息到频道%1</translation>
     </message>
     <message>
         <location line="+9"/>
@@ -4836,7 +4836,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+2"/>
         <source>Deafened.</source>
-        <translation type="unfinished">关闭扬声器。</translation>
+        <translation type="unfinished">扬声器已关闭。</translation>
     </message>
     <message>
         <location line="+3"/>
@@ -4856,7 +4856,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+5"/>
         <source>&lt;b&gt;WARNING:&lt;/b&gt; The server presented a certificate that was different from the stored one.</source>
-        <translation type="unfinished">&lt;b&gt;警告：&lt;/b&gt; 服务器的现有证书和已存储的证书不一致。</translation>
+        <translation type="unfinished">&lt;b&gt;警告：&lt;/b&gt; 服务器发送的证书和已存储的证书不一致。</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -4871,7 +4871,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+24"/>
         <source>This server is using an older encryption standard, and is no longer supported by modern versions of Mumble.</source>
-        <translation type="unfinished">服务器使用了一个早期的加密标准，当前版本的Mumble所不支持该标准。</translation>
+        <translation type="unfinished">服务器使用了一个早期的加密标准，当前版本的Mumble并不支持该标准。</translation>
     </message>
     <message>
         <location line="+6"/>
@@ -4891,7 +4891,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+1"/>
         <source>You connected with an invalid username, please try another one.</source>
-        <translation>你以一个无效的用户名连接，请尝试其他用户名。</translation>
+        <translation type="unfinished">你试图一个无效的用户名连接，请尝试其他用户名。</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -4901,7 +4901,7 @@ This field describes the size of an LCD device. The size is given either in pixe
     <message>
         <location line="+1"/>
         <source>That username is already in use, please try another username.</source>
-        <translation>此用户名已经被使用，请尝试其他用户名。</translation>
+        <translation type="unfinished">用户名已经被使用，请尝试其他用户名。</translation>
     </message>
     <message>
         <location line="+5"/>
@@ -4943,7 +4943,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>This shows all recent activity. Connecting to servers, errors and information messages all show up here.&lt;br /&gt;To configure exactly which messages show up here, use the &lt;b&gt;Settings&lt;/b&gt; command from the menu.</source>
-        <translation type="unfinished">这里显示所有最近的活动。连接到服务器、错误和信息、消息等都将显示在这里。&lt;br /&gt;如果要设置这里显示的信息，请在菜单里选择&lt;b&gt;Settings&lt;/b&gt;命令。</translation>
+        <translation type="unfinished">这里显示所有最近的活动。连接到服务器、错误和信息、消息等都将显示在这里。&lt;br /&gt;如果要设置这里显示的信息，请在菜单里选择&lt;b&gt;设置&lt;/b&gt;。</translation>
     </message>
     <message>
         <location/>
@@ -4963,7 +4963,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Ctrl+Q</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">Ctrl+Q</translation>
     </message>
     <message>
         <location/>
@@ -4998,7 +4998,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Edit ban lists on server</source>
-        <translation>编辑服务器的Ban列表</translation>
+        <translation type="unfinished">编辑服务器的屏蔽列表</translation>
     </message>
     <message>
         <location/>
@@ -5053,7 +5053,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Sends a text message to another user.</source>
-        <translation>发送一个文字信息给其他用户。</translation>
+        <translation type="unfinished">发送一个文字信息给另一个用户。</translation>
     </message>
     <message>
         <location/>
@@ -5063,7 +5063,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Add new channel</source>
-        <translation>添加一个新的频道</translation>
+        <translation type="unfinished">添加新频道</translation>
     </message>
     <message>
         <location/>
@@ -5098,7 +5098,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>&amp;Link</source>
-        <translation>连接(&amp;L)</translation>
+        <translation type="unfinished">链接(&amp;L)</translation>
     </message>
     <message>
         <location/>
@@ -5118,7 +5118,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Shows a dialog of registered servers, and also allows quick-connect.</source>
-        <translation>显示一个已注册的服务器的对话框，而且可以进行快速连接。</translation>
+        <translation type="unfinished">显示一个已注册的服务器的对话框，你可以快速连接到这些服务器。</translation>
     </message>
     <message>
         <location/>
@@ -5143,12 +5143,12 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Kick and ban user (with reason)</source>
-        <translation>踢出并且Ban 用户(包含原因)</translation>
+        <translation type="unfinished">踢出并且屏蔽用户(包含原因)</translation>
     </message>
     <message>
         <location/>
         <source>Kick and ban selected user from server. You&apos;ll be asked to specify a reason.</source>
-        <translation type="unfinished">将一个所选的用户从服务器踢出并Ban。你需要输入一个理由。</translation>
+        <translation type="unfinished">将一个所选的用户从服务器踢出并屏蔽。你需要输入一个理由。</translation>
     </message>
     <message>
         <location/>
@@ -5216,12 +5216,12 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Reset audio preprocessor</source>
-        <translation>重置音频预处理程序</translation>
+        <translation type="unfinished">重置音频预处理器</translation>
     </message>
     <message>
         <location/>
         <source>This will reset the audio preprocessor, including noise cancellation, automatic gain and voice activity detection. If something suddenly worsens the audio environment (like dropping the microphone) and it was temporary, use this to avoid having to wait for the preprocessor to readjust.</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">重置音频处理器，包括噪音消除、自动增量和语音激活检测。如果你的音频环境突然变差(比如你的麦克风丢了)并且这是暂时的，使用这个功能可以避免你重新调整音频处理器。</translation>
     </message>
     <message>
         <location/>
@@ -5241,12 +5241,12 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>&amp;Deafen Self</source>
-        <translation>&amp;D关闭自己的扬声器</translation>
+        <translation type="unfinished">关闭自己的扬声器(&amp;D)</translation>
     </message>
     <message>
         <location/>
         <source>Deafen yourself</source>
-        <translation>关闭及的扬声器</translation>
+        <translation type="unfinished">关闭自己的扬声器</translation>
     </message>
     <message>
         <location/>
@@ -5301,17 +5301,17 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Allows you to change most settings for Mumble.</source>
-        <translation>允许你改变Mumble的大多数设置</translation>
+        <translation type="unfinished">你可以改变Mumble的大多数设置。</translation>
     </message>
     <message>
         <location/>
         <source>&amp;Audio Wizard</source>
-        <translation>音频向导(&amp;A)</translation>
+        <translation type="unfinished">音频设置向导(&amp;A)</translation>
     </message>
     <message>
         <location/>
         <source>Start the audio configuration wizard</source>
-        <translation>开始音频配置向导</translation>
+        <translation type="unfinished">进入音频配置向导</translation>
     </message>
     <message>
         <location/>
@@ -5321,17 +5321,17 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>&amp;What&apos;s This?</source>
-        <translation>这是什么(&amp;W)？</translation>
+        <translation type="unfinished">这是什么(&amp;W)？</translation>
     </message>
     <message>
         <location/>
         <source>Enter What&apos;s This? mode</source>
-        <translation type="unfinished">进入 这是什么? 模式</translation>
+        <translation type="unfinished">进入 “这是什么? ”模式</translation>
     </message>
     <message>
         <location/>
         <source>Click this to enter &quot;What&apos;s This?&quot; mode. Your cursor will turn into a question mark. Click on any button, menu choice or area to show a description of what it is.</source>
-        <translation type="unfinished">点击进入 “这是什么？”模式。你的鼠标会带有一个询问标记。点击其他的按钮、菜单中选择需要显示说明的区域。</translation>
+        <translation type="unfinished">点击进入 “这是什么？”模式。你的鼠标会带有一个问号标签。点击其他的按钮、菜单中选择需要显示说明的区域。</translation>
     </message>
     <message>
         <location/>
@@ -5411,12 +5411,12 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>This starts the wizard for creating, importing and exporting certificates for authentication against servers.</source>
-        <translation>开始证书向导，导入或者到处服务器验证的证书。</translation>
+        <translation type="unfinished">进入证书向导，导入或者导出证书，证书将用于向服务器验证你的身份。</translation>
     </message>
     <message>
         <location/>
         <source>Register user on server</source>
-        <translation>主儿测用户到服务器</translation>
+        <translation type="unfinished">注册用户到服务器</translation>
     </message>
     <message>
         <location/>
@@ -5431,7 +5431,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Adds a user as your friend.</source>
-        <translation>添加一个用户为你的好友。</translation>
+        <translation type="unfinished">将一个用户加为好友。</translation>
     </message>
     <message>
         <location/>
@@ -5466,12 +5466,12 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Your friend uses a different name than what is in your database. This will update the name.</source>
-        <translation>你的好用使用了一个和你的数据库中不同的名字。这将更新这个名字。</translation>
+        <translation type="unfinished">你的好友使用了一个和你的数据库中不同的名字。这将更新这个名字。</translation>
     </message>
     <message>
         <location/>
         <source>Registered &amp;Users</source>
-        <translation>书测用户(&amp;U)</translation>
+        <translation type="unfinished">已注册用户(&amp;U)</translation>
     </message>
     <message>
         <location/>
@@ -5486,17 +5486,17 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>&amp;Access Tokens</source>
-        <translation>有效标记(&amp;A)</translation>
+        <translation type="unfinished">访问标记(&amp;A)</translation>
     </message>
     <message>
         <location/>
         <source>Add or remove text-based access tokens</source>
-        <translation>添加或删除一个基于文字的有效标记</translation>
+        <translation type="unfinished">添加或删除一个文字访问标记</translation>
     </message>
     <message>
         <location/>
         <source>&amp;Minimal View</source>
-        <translation>简洁视图(&amp;M)</translation>
+        <translation type="unfinished">迷你模式(&amp;M)</translation>
     </message>
     <message>
         <location/>
@@ -5582,17 +5582,17 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location line="+36"/>
         <source>You were denied %1 privileges in %2.</source>
-        <translation>你在 %2 的%1 权限被拒绝。</translation>
+        <translation type="unfinished">你在 %2 没有 %1 权限。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>%3 was denied %1 privileges in %2.</source>
-        <translation>%3 在 %2 的%1 权限被拒绝。</translation>
+        <translation type="unfinished">%3 在 %2 不具备 %1 权限。</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>Denied: Cannot modify SuperUser.</source>
-        <translation>拒绝：无法修改超级用户。</translation>
+        <translation type="unfinished">拒绝：无法对超级用户执行此操作。</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -5602,7 +5602,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location line="+4"/>
         <source>Denied: Text message too long.</source>
-        <translation>拒绝：文本消息太长。</translation>
+        <translation type="unfinished">拒绝：文字信息太长。</translation>
     </message>
     <message>
         <location line="+25"/>
@@ -5612,7 +5612,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location line="+7"/>
         <source>You need a certificate to perform this operation.</source>
-        <translation>你需要认证才能执行该操作。</translation>
+        <translation type="unfinished">你需要拥有一个证书才能执行该操作。</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -5662,7 +5662,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location line="+2"/>
         <source>Recording stopped</source>
-        <translation>录音结束</translation>
+        <translation type="unfinished">停止录音</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -5672,7 +5672,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location line="+2"/>
         <source>%1 stopped recording.</source>
-        <translation>%1 结束了录音。</translation>
+        <translation type="unfinished">%1 停止录音。</translation>
     </message>
     <message>
         <location line="+21"/>
@@ -5698,7 +5698,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location line="+3"/>
         <source>You were unsuppressed.</source>
-        <translation>你被解禁。</translation>
+        <translation type="unfinished">你被解除了禁止。</translation>
     </message>
     <message>
         <location line="+2"/>
@@ -5740,17 +5740,17 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location line="+197"/>
         <source>The server requests minimum client version %1</source>
-        <translation>服务器至少要求客户端版本 %1</translation>
+        <translation type="unfinished">服务器要求客户端版本不低于 %1</translation>
     </message>
     <message>
         <location line="+4"/>
         <source>The server requests positional audio be enabled.</source>
-        <translation>服务器要求开启位置音频。</translation>
+        <translation type="unfinished">服务器要求开启位置模拟。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>The server requests positional audio be disabled.</source>
-        <translation>服务器禁止使用位置音频。</translation>
+        <translation type="unfinished">服务器禁止使用位置模拟。</translation>
     </message>
     <message>
         <location line="+4"/>
@@ -5790,7 +5790,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location line="+16"/>
         <source>%1 unsuppressed by %2.</source>
-        <translation type="unfinished">%2 解除了 %1 禁止。</translation>
+        <translation type="unfinished">%2 解除了 %1 的禁止。</translation>
     </message>
     <message>
         <location line="-14"/>
@@ -5826,7 +5826,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location line="+5"/>
         <source>%3 was kicked and banned from the server by %1: %2.</source>
-        <translation type="unfinished">%1 将%3 踢出了服务器并屏蔽：%2。</translation>
+        <translation type="unfinished">%1 将%3 踢出了服务器并将其屏蔽：%2。</translation>
     </message>
     <message>
         <location line="-60"/>
@@ -5851,7 +5851,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location line="+353"/>
         <source>Message from %1</source>
-        <translation type="unfinished">来自 %1 的消息</translation>
+        <translation type="unfinished">来自 %1 的信息</translation>
     </message>
     <message>
         <location filename="UserModel.cpp" line="+1381"/>
@@ -5936,7 +5936,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Query server for connection information for user</source>
-        <translation>确认用户的服务器连接信息</translation>
+        <translation type="unfinished">向服务器查询用户的连接信息</translation>
     </message>
     <message>
         <location/>
@@ -5986,7 +5986,7 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Remove currently defined avatar image.</source>
-        <translation>删除当前偶像图片。</translation>
+        <translation type="unfinished">删除当前头像图片。</translation>
     </message>
     <message>
         <location/>
@@ -6155,12 +6155,12 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Port number of the proxy</source>
-        <translation>该代理使用的端口号</translation>
+        <translation type="unfinished">代理服务器的端口</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Port number of the proxy.&lt;/b&gt;&lt;br /&gt;This field specifies the port number that the proxy expects connections on.</source>
-        <translation>&lt;b&gt;代理的端口号。&lt;/b&gt;&lt;br /&gt;这里指定了代理连接使用的端口号。</translation>
+        <translation type="unfinished">&lt;b&gt;代理服务器的端口号。&lt;/b&gt;&lt;br /&gt;这里指定了代理服务器所使用的端口号。</translation>
     </message>
     <message>
         <location/>
@@ -6200,13 +6200,13 @@ Otherwise abort and check your certificate and username.</source>
     <message>
         <location/>
         <source>Prevent log from downloading images</source>
-        <translation type="unfinished"></translation>
+        <translation type="unfinished">阻止在记录中下载图片</translation>
     </message>
     <message>
         <location/>
         <source>&lt;b&gt;Disable image download&lt;/b&gt;&lt;br/&gt;
 Prevents the client from downloading images embedded into chat messages with the img tag.</source>
-        <translation>&lt;b&gt;不下载图片&lt;/b&gt;&lt;br/&gt;阻止客户端下载聊天信息中包含的图片作为图片标识。</translation>
+        <translation type="unfinished">&lt;b&gt;禁止下载图片&lt;/b&gt;&lt;br/&gt;阻止客户端通过图片标签下载聊天信息中包含的图片。</translation>
     </message>
     <message>
         <location/>
@@ -6298,7 +6298,7 @@ Prevents the client from downloading images embedded into chat messages with the
         <location line="+3"/>
         <location filename="OverlayUser.cpp" line="+3"/>
         <source>Shout</source>
-        <translation>高喊</translation>
+        <translation type="unfinished">咆哮</translation>
     </message>
     <message>
         <location line="+17"/>
@@ -6309,7 +6309,7 @@ Prevents the client from downloading images embedded into chat messages with the
     <message>
         <location filename="Overlay.cpp" line="+101"/>
         <source>Failed to create communication with overlay at %2: %1. No overlay will be available.</source>
-        <translation>在%2：%1 通过overlay创建通信失败。overlay无法激活。</translation>
+        <translation type="unfinished">在%2：%1 通过overlay创建通信失败。无法激活overlay。</translation>
     </message>
     <message>
         <location line="+252"/>
@@ -6397,7 +6397,7 @@ Prevents the client from downloading images embedded into chat messages with the
     <message>
         <location line="+1"/>
         <source>Amount of seconds users remain active after talking:</source>
-        <translation>统计用户说话后保持激活的时间：</translation>
+        <translation type="unfinished">用户说话后保持激活的总时间：</translation>
     </message>
 </context>
 <context>
@@ -6912,17 +6912,17 @@ To upgrade these files to their latest versions, click the button below.</source
     <message>
         <location/>
         <source>Reloads all plugins</source>
-        <translation>重新加载所有插件</translation>
+        <translation type="unfinished">刷新所有插件</translation>
     </message>
     <message>
         <location/>
         <source>This rescans and reloads plugins. Use this if you just added or changed a plugin to the plugins directory.</source>
-        <translation>重新检索并加载插件。当你添加或者改变了插件目录中的插件时请执行此操作。</translation>
+        <translation type="unfinished">重新检索并刷新插件。当你添加或者改变了插件目录中的插件时请执行此操作。</translation>
     </message>
     <message>
         <location/>
         <source>&amp;Reload plugins</source>
-        <translation>重新加载插件(&amp;R)</translation>
+        <translation type="unfinished">刷新插件(&amp;R)</translation>
     </message>
     <message>
         <location/>
@@ -7103,7 +7103,7 @@ To upgrade these files to their latest versions, click the button below.</source
     <message>
         <location filename="RichTextEditorLink.ui"/>
         <source>Add Link</source>
-        <translation>添加链接</translation>
+        <translation>插入链接</translation>
     </message>
     <message>
         <location/>
@@ -7121,22 +7121,22 @@ To upgrade these files to their latest versions, click the button below.</source
     <message>
         <location filename="ServerHandler.cpp" line="+401"/>
         <source>UDP packets cannot be sent to or received from the server. Switching to TCP mode.</source>
-        <translation>UDP数据包无法发送至服务器或从服务器接收。切换为TCP模式。</translation>
+        <translation type="unfinished">UDP数据无法发送至服务器或无法从服务器接收UDP数据。切换为TCP模式。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>UDP packets cannot be sent to the server. Switching to TCP mode.</source>
-        <translation>UDP数据包无法发送至服务器。切换为TCP模式。</translation>
+        <translation type="unfinished">UDP数据无法发送至服务器。切换为TCP模式。</translation>
     </message>
     <message>
         <location line="+2"/>
         <source>UDP packets cannot be received from the server. Switching to TCP mode.</source>
-        <translation>无法从服务器接收UDP数据包。切换至TCP模式。</translation>
+        <translation type="unfinished">无法从服务器接收UDP数据。切换至TCP模式。</translation>
     </message>
     <message>
         <location line="+7"/>
         <source>UDP packets can be sent to and received from the server. Switching back to UDP mode.</source>
-        <translation>可以从服务器接收UDP包及发送UDP数据至服务器。切换回UDP模式。</translation>
+        <translation type="unfinished">可以从服务器接收UDP，可以发送UDP数据至服务器。切换回UDP模式。</translation>
     </message>
     <message>
         <location line="+36"/>
@@ -7197,7 +7197,7 @@ To upgrade these files to their latest versions, click the button below.</source
     <message>
         <location filename="GlobalShortcut.cpp" line="-483"/>
         <source>Unassigned</source>
-        <translation>未赋值</translation>
+        <translation type="unfinished">未使用</translation>
     </message>
 </context>
 <context>
@@ -7220,7 +7220,7 @@ To upgrade these files to their latest versions, click the button below.</source
     <message>
         <location line="+6"/>
         <source>Unassigned</source>
-        <translation>未赋值</translation>
+        <translation type="unfinished">未使用</translation>
     </message>
 </context>
 <context>
@@ -7344,12 +7344,12 @@ To upgrade these files to their latest versions, click the button below.</source
     <message>
         <location filename="Tokens.ui"/>
         <source>Mumble - Access Tokens</source>
-        <translation type="unfinished">Mumble — 有效标记</translation>
+        <translation type="unfinished">Mumble — 访问标记</translation>
     </message>
     <message>
         <location/>
         <source>List of access tokens on current server</source>
-        <translation>在当前服务器有效标记列表</translation>
+        <translation type="unfinished">用于当前服务器的访问标记列表</translation>
     </message>
     <message>
         <location/>
@@ -7357,9 +7357,9 @@ To upgrade these files to their latest versions, click the button below.</source
 &lt;br /&gt;
 An access token is a text string, which can be used as a password for very simple access management on channels. Mumble will remember the tokens you&apos;ve used and resend them to the server next time you reconnect, so you don&apos;t have to enter these every time.
 </source>
-        <translation type="unfinished">&lt;b&gt;这是一个已连接服务器上的的有效标记的可编辑的列表。.&lt;/b&gt;
+        <translation type="unfinished">&lt;b&gt;一个已连接服务器上的的访问标记的可编辑的列表。.&lt;/b&gt;
 &lt;br /&gt;
-一个有效的标记是一个字符串。他可以被看作是对频道进行一个简单的管理的密码。Mumble可以记住你所使用的标记并且再下次自动连接到服务器时自动发送，所以你不用每次都输入。</translation>
+访问标记是一个字符串。他可以被看作是对频道进行一个简单的管理的密码。Mumble可以记住你所使用的标记并且再下次自动连接到服务器时自动发送，所以你不用每次都输入。</translation>
     </message>
     <message>
         <location/>
@@ -7705,7 +7705,7 @@ An access token is a text string, which can be used as a password for very simpl
     <message>
         <location line="+2"/>
         <source>Flags</source>
-        <translation>标识</translation>
+        <translation type="unfinished">标签</translation>
     </message>
     <message>
         <location line="+721"/>
