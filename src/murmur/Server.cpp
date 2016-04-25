@@ -612,6 +612,8 @@ void Server::setLiveConf(const QString &key, const QString &value) {
 		iOpusThreshold = (i >= 0 && !v.isNull()) ? qBound(0, i, 100) : Meta::mp.iOpusThreshold;
 	else if (key =="channelnestinglimit")
 		iChannelNestingLimit = (i >= 0 && !v.isNull()) ? i : Meta::mp.iChannelNestingLimit;
+	else if (key == "certificate")
+		initializeCert();
 }
 
 #ifdef USE_BONJOUR
